@@ -1,105 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nima Daryabar | AI Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Nima Daryabar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="loader.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="hero">
-            <img src="profile-placeholder.png" alt="Profile Photo" class="profile-pic">
-            <h1>Nima Daryabar</h1>
-            <p>AI Engineer | Software Developer</p>
-            <div class="buttons">
-                <a href="mailto:nima.daryabar@gmail.com" class="btn">Email</a>
-                <a href="https://linkedin.com/in/nima-daryabar" target="_blank" class="btn">LinkedIn</a>
-                <a href="https://github.com/nimad70" target="_blank" class="btn">GitHub</a>
-            </div>
-        </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <div class="loader"><div class="spinner"></div></div>
+  
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Computer Scientist specializing in AI and software development, with hands-on experience in RAG systems,
-        fine-tuning LLMs, and building scalable machine learning pipelines. Skilled in Python, PyTorch, and TensorFlow. Passionate about deploying research-driven, production-ready solutions.</p>
-    </section>
-
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
-        <div class="card">
-            <h3><a href="#">Emotion-Aware Chatbot (In Progress)</a></h3>
-            <p>Building a real-time face detection and emotion classification system combined with a LangChain-powered chatbot that adapts conversation flow based on the user's emotions.</p>
-        </div>
-        <div class="card">
-            <h3>Optimizing QA in LLMs</h3>
-            <p>Fine-tuned Mistral 7B with domain-specific RAG & RAFT techniques, improving accuracy from 84% to over 95%.</p>
-        </div>
-        <div class="card">
-            <h3>Diabetic Retinopathy Detection</h3>
-            <p>Built a CNN classifier (Inception V3) for diabetic retinopathy on the APTOS 2019 dataset, achieving 79% accuracy.</p>
-        </div>
-        <div class="card">
-            <h3>ML Surge Predictor</h3>
-            <p>Developed time-series surge price prediction models using XGBoost, Random Forest, and neural networks.</p>
-        </div>
-    </section>
-
-    <section id="experience" class="fade-in">
-        <h2>Experience</h2>
-        <ul>
-            <li><strong>AI Research Intern – Radboud University</strong> (Oct 2023 – Mar 2024)</li>
-            <li><strong>Freelance Software Developer</strong> (2017 – 2021)</li>
-            <li><strong>Front-End Developer – Jahankit Electronics</strong> (2017)</li>
-        </ul>
-    </section>
-
-    <section id="skills" class="fade-in">
-        <h2>Skills</h2>
-        <p>Python, TensorFlow, PyTorch, Docker, Hugging Face, LangChain, OpenCV, SQL, NoSQL, Git, Azure, Computer Vision</p>
-    </section>
-
-    <section id="certifications" class="fade-in">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Supervised ML – Stanford</li>
-            <li>Unsupervised ML & RL – Stanford</li>
-            <li>Open Source Models – Hugging Face</li>
-            <li>Prompt Engineering – LinkedIn Learning</li>
-            <li>Python for Data Science – IBM</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:nima.daryabar@gmail.com">nima.daryabar@gmail.com</a></p>
-        <p><a href="https://linkedin.com/in/nima-daryabar" target="_blank">LinkedIn</a> |
-           <a href="https://github.com/nimad70" target="_blank">GitHub</a></p>
-    </section>
-
-    <footer>
-        <p>© 2025 Nima Daryabar. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <div class="hero">
+    <img src="profile-placeholder.png" alt="Profile" class="profile-pic">
+    <h1>Nima Daryabar</h1>
+    <p>AI Engineer | Software Developer</p>
+    <a href="projects.html" class="btn">See My Work</a>
+  </div>
 </body>
+<footer>© 2025 Nima Daryabar</footer>
 </html>

@@ -104,3 +104,31 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animated skill bars */
+.skill-bar {
+  margin: 10px 0;
+  background: #112240;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-bar span {
+  font-weight: 600;
+}
+.bar-fill {
+  height: 8px;
+  background: #64ffda;
+  width: 0%;
+  transition: width 1.5s ease-out;
+}

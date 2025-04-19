@@ -132,3 +132,26 @@ footer {
   width: 0%;
   transition: width 1.5s ease-out;
 }
+
+/* Scroll-up button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #64ffda;
+  color: #0a192f;
+  font-size: 28px;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.4s;
+}
+#scrollToTopBtn:hover {
+  background-color: #52e0c4;
+}

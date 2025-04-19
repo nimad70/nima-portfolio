@@ -34,3 +34,18 @@ const skillsObserver = new IntersectionObserver(function(entries) {
 }, { threshold: 0.4 });
 
 skillsObserver.observe(skillSection);
+
+// Scroll-to-top button logic
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollBtn.style.display = "flex";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

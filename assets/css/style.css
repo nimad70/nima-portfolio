@@ -60,7 +60,7 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  height: 70vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,13 +239,13 @@ footer {
 /* Hero Section with Animated Background */
 .hero-section {
   position: relative;
-  min-height: 70vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(145deg, #0a192f, #0f2238);
-  padding: 60px 20px 100px;
+  padding: 0px 20px 0px;
   text-align: center;
 }
 

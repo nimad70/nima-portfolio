@@ -7,89 +7,129 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-CTFPVLX63N');
   </script>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Nima Daryabar</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Nima Daryabar - AI Engineer | Software Developer | Specializing in Machine Learning, LLMs, Computer Vision.">
-  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning Engineer, Software Developer, LLMs, Hugging Face, TensorFlow, Python">
+  <meta name="description" content="Nima Daryabar - AI Engineer | Software Developer specializing in Machine Learning, LLMs, and Computer Vision.">
+  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, Software Developer, LLMs, Python, Hugging Face">
   <meta name="author" content="Nima Daryabar">
   <meta property="og:title" content="Nima Daryabar - AI Engineer Portfolio">
   <meta property="og:description" content="Portfolio showcasing Machine Learning, LLMs, and Computer Vision projects.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourusername.github.io/your-portfolio/">
-  <meta property="og:image" content="profile.png">
+  <meta property="og:url" content="https://nimadaryabar.com/about.html">
+  <meta property="og:image" content="../assets/images/profile-placeholder.png">
   <link rel="canonical" href="https://nimadaryabar.com/about.html" />
+  
+  <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <script src="loader.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/loader.js" defer></script>
+  <script src="../assets/js/script.js" defer></script>
 </head>
+
 <body>
+
 <div class="loader"><div class="spinner"></div></div>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="about.html" class="active">About</a>
   <a href="projects.html">Projects</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
+<section class="about-section fade-in">
   <h2>About Me</h2>
   <p>I am a Computer Scientist specializing in AI and machine learning system deployment. Passionate about designing scalable AI solutions and deploying production-ready ML pipelines.</p>
-
-  <a href="Nima_Daryabar_Resume_AI (1).pdf" class="btn">Download My CV</a>
+  
+  <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
 
   <h2>Experience</h2>
 
-  <div class="experience fade-in">
-    <h3>AI Research Intern – Radboud University</h3>
-    <p><strong>Tech:</strong> Python, Hugging Face, LangChain, RAG, QLoRA, Fine-tuning LLMs</p>
-    <ul>
-      <li>Designed and implemented retrieval-augmented generation (RAG) pipelines for domain-specific knowledge bases.</li>
-      <li>Fine-tuned large language models (QLoRA) and evaluated performance improvements in QA tasks.</li>
-      <li>Built and deployed semantic search systems for efficient document retrieval.</li>
-    </ul>
-  </div>
+  <div class="experience-container">
 
-  <div class="experience fade-in">
-    <h3>Freelance Software Developer</h3>
-    <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, REST APIs, Machine Learning Deployment</p>
-    <ul>
-      <li>Built and deployed custom machine learning models for various clients (classification, forecasting).</li>
-      <li>Created full-stack applications using Streamlit and Flask to demonstrate ML workflows.</li>
-      <li>Integrated machine learning models into real-world applications with scalable APIs.</li>
-    </ul>
-  </div>
+    <div class="experience-card">
+      <h3>AI Research Intern – Radboud University</h3>
+      <p><strong>Tech:</strong> Python, Hugging Face, LangChain, RAG, QLoRA, Fine-tuning LLMs</p>
+      <div class="experience-details">
+        <ul>
+          <li>Designed and implemented retrieval-augmented generation (RAG) pipelines for domain-specific knowledge bases.</li>
+          <li>Fine-tuned large language models (QLoRA) and evaluated performance improvements in QA tasks.</li>
+          <li>Built and deployed semantic search systems for efficient document retrieval.</li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="experience fade-in">
-    <h3>Front-End Developer – Jahankit Electronics</h3>
-    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-    <ul>
-      <li>Developed responsive front-end web pages for e-commerce platforms.</li>
-      <li>Collaborated with back-end developers to integrate user interfaces with databases.</li>
-    </ul>
+    <div class="experience-card">
+      <h3>Freelance Software Developer</h3>
+      <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, REST APIs, Machine Learning Deployment</p>
+      <div class="experience-details">
+        <ul>
+          <li>Built and deployed custom machine learning models for various clients.</li>
+          <li>Created full-stack ML applications using Streamlit and Flask.</li>
+          <li>Integrated machine learning models into real-world scalable APIs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3>Front-End Developer – Jahankit Electronics</h3>
+      <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+      <div class="experience-details">
+        <ul>
+          <li>Developed responsive front-end web pages for e-commerce platforms.</li>
+          <li>Collaborated with back-end developers to integrate UIs with databases.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <h2>Skills</h2>
-  <div class="skill-bar"><span>Python</span><div class="bar-fill" style="width: 95%;"></div></div>
-  <div class="skill-bar"><span>TensorFlow</span><div class="bar-fill" style="width: 90%;"></div></div>
-  <div class="skill-bar"><span>PyTorch</span><div class="bar-fill" style="width: 88%;"></div></div>
-  <div class="skill-bar"><span>Docker</span><div class="bar-fill" style="width: 85%;"></div></div>
-  <div class="skill-bar"><span>LangChain</span><div class="bar-fill" style="width: 80%;"></div></div>
-  <div class="skill-bar"><span>OpenCV</span><div class="bar-fill" style="width: 85%;"></div></div>
-  <div class="skill-bar"><span>Git</span><div class="bar-fill" style="width: 80%;"></div></div>
-  <div class="skill-bar"><span>Azure</span><div class="bar-fill" style="width: 75%;"></div></div>
+  <div class="skills-grid">
+
+    <div class="skill-category">
+      <h4>AI & Machine Learning</h4>
+      <ul>
+        <li>Python</li>
+        <li>TensorFlow</li>
+        <li>PyTorch</li>
+        <li>LangChain</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h4>Backend & Tools</h4>
+      <ul>
+        <li>Docker</li>
+        <li>REST APIs</li>
+        <li>Git</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h4>Cloud Platforms</h4>
+      <ul>
+        <li>Azure</li>
+      </ul>
+    </div>
+
+  </div>
 
 </section>
 
 <footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
 <button id="scrollToTopBtn" title="Go to top">↑</button>
+
 </body>
 </html>

@@ -7,60 +7,138 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-CTFPVLX63N');
   </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - Nima Daryabar</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <!-- SEO Meta Tags -->
-  <meta name="description" content="Nima Daryabar - AI Engineer | Software Developer | Specializing in Machine Learning, LLMs, Computer Vision.">
-  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning Engineer, Software Developer, LLMs, Hugging Face, TensorFlow, Python">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Nima Daryabar - AI Engineer | Showcasing Projects in Machine Learning, LLMs, Computer Vision.">
+  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, LLMs, Deep Learning, Computer Vision">
   <meta name="author" content="Nima Daryabar">
-  <meta property="og:title" content="Nima Daryabar - AI Engineer Portfolio">
-  <meta property="og:description" content="Portfolio showcasing Machine Learning, LLMs, and Computer Vision projects.">
+  <meta property="og:title" content="Projects - Nima Daryabar">
+  <meta property="og:description" content="Portfolio showcasing Machine Learning, LLMs, Computer Vision projects.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourusername.github.io/your-portfolio/">
-  <meta property="og:image" content="profile.png">
+  <meta property="og:url" content="https://nimadaryabar.com/projects.html">
+  <meta property="og:image" content="../assets/images/profile-placeholder.png">
+
   <link rel="canonical" href="https://nimadaryabar.com/projects.html" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <script src="loader.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/loader.js" defer></script>
+  <script src="../assets/js/script.js" defer></script>
+
 </head>
+
 <body>
+
 <div class="loader"><div class="spinner"></div></div>
 
-<nav>
-  <a href="index.html">Home</a>
+<nav class="navbar">
+  <a href="../index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html" class="active">Projects</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Emotion-Aware Chatbot</h3>
-    <p>Face detection + LangChain adaptive conversation based on user emotions.</p>
+<section class="projects-section fade-in">
+  <h2>My Projects</h2>
+
+  <div class="projects-list">
+
+    <!-- Featured Project -->
+    <div class="project-card featured-project">
+      <div class="project-badge">Featured</div>
+      <h3><img src="../assets/images/quality-assurance.png" class="project-icon" alt="Chatbot">LLM Vulnerabilities in RAG Systems</h3>
+      <div class="project-hidden">
+        <ul>
+          <li>Assess LLM Vulnerabilities: Determine the impact of corrupted data within vector databases on LLM performance</li>
+          <li>Analyze RAG System Security: Investigate how RAG architectures can be exploited through data poisoning</li>
+          <li>Develop Mitigation Strategies: Propose methods to enhance the resilience of RAG-based LLM systems against such attacks</li>
+        </ul>
+        <p><strong>Technologies:</strong> Python, Llama, Hugging Face, LangChain</p>
+      </div>
+    </div>
+
+    <!-- In Progress Project -->
+    <div class="project-card inprogress-project">
+      <div class="project-badge-inprogress">In Progress</div>
+      <h3><img src="../assets/images/ai.png" class="project-icon" alt="Chatbot"> Emotion-Aware Chatbot</h3>
+      <div class="project-hidden">
+        <ul>
+          <li>Real-time emotion detection from webcam input</li>
+          <li>Adaptive conversations powered by LangChain</li>
+          <li>Deployed via Streamlit with mobile-first responsive design</li>
+        </ul>
+        <p><strong>Technologies:</strong> Python, OpenCV, Hugging Face, LangChain, Streamlit</p>
+      </div>
+    </div>
+
+    <!-- Normal Projects -->
+    <div class="project-card">
+      <h3><img src="../assets/images/qa.png" class="project-icon" alt="QA"> Optimizing QA in LLMs</h3>
+      <div class="project-hidden">
+        <ul>
+          <li>Fine-tuned Mistral 7B for dynamic QA with RAG</li>
+          <li>Achieved 95% QA performance (from 84%)</li>
+          <li>Optimized retrievals using RAFT techniques</li>
+        </ul>
+        <p><strong>Technologies:</strong> Python, Hugging Face, FAISS, RAG Systems</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3><img src="../assets/images/eye-examination.png" class="project-icon" alt="Medical"> Diabetic Retinopathy Detection</h3>
+      <div class="project-hidden">
+        <ul>
+          <li>Classified retinal images with Inception V3 CNN</li>
+          <li>Designed augmentation pipeline for better generalization</li>
+          <li>Achieved 79% medical imaging accuracy</li>
+        </ul>
+        <p><strong>Technologies:</strong> Python, TensorFlow, Keras, OpenCV</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3><img src="../assets/images/pricing.png" class="project-icon" alt="Pricing"> ML-Based Surge Pricing Predictor</h3>
+      <div class="project-hidden">
+        <ul>
+          <li>Built predictive models for market price surge detection</li>
+          <li>Integrated models into scalable backend API</li>
+          <li>Delivered 76% precision across multi-city datasets</li>
+        </ul>
+        <p><strong>Technologies:</strong> Python, Scikit-Learn, Flask, REST API</p>
+      </div>
+    </div>
+
   </div>
-  <div class="card">
-    <h3>Optimizing QA in LLMs</h3>
-    <p>Boosted QA accuracy from 84% to 95% using Mistral 7B + RAG + RAFT.</p>
-  </div>
-  <div class="card">
-    <h3>Diabetic Retinopathy Detection</h3>
-    <p>Classified retinal images using Inception V3 achieving 79% accuracy.</p>
-  </div>
-  <div class="card">
-    <h3>ML-Based Surge Pricing Predictor</h3>
-    <p>Built ML models predicting market price surges with 76% precision.</p>
-  </div>
+
 </section>
 
-<footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
+<footer>
+  <p style="font-size: 0.8rem; opacity: 0.7;">
+    🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar
+    <br><br>
+    Icons by
+    <a href="https://www.flaticon.com/free-icons/video" title="video icons created by Graficon - Flaticon"  target="_blank" style="color: #64ffda;">Video icons</a>,
+    <a href="https://www.flaticon.com/free-icons/quality-assurance" title="quality assurance icons created by Slamlabs - Flaticon"  target="_blank" style="color: #64ffda;">Quality assurance icons</a>,
+    <a href="https://www.flaticon.com/free-icons/eye-test" title="eye-test icons created by Linector - Flaticon" target="_blank" style="color: #64ffda;">Eye-test icons</a>,
+    <a href="https://www.flaticon.com/free-icons/qa" title="qa icons created by Freepik - Flaticon" target="_blank" style="color: #64ffda;">Qa icons</a>,
+    <a href="https://www.flaticon.com/free-icons/pricing" title="pricing icons created by monkik - Flaticon" target="_blank" style="color: #64ffda;">Pricing icons</a>
+    from Flaticon.
+  </p>
+</footer>
+
+
 <button id="scrollToTopBtn" title="Go to top">↑</button>
+
 </body>
 </html>

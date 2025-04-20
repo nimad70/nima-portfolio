@@ -236,3 +236,65 @@ footer {
 #scrollToTopBtn:hover {
   background-color: #52e0c4;
 }
+/* Hero Section with Animated Background */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0a192f, #0f2238);
+  padding: 60px 20px 100px;
+  text-align: center;
+}
+
+.background-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.hero-content {
+  z-index: 1;
+  position: relative;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #52e0c4;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #ccd6f6;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #52e0c4;
+  border: 2px solid #52e0c4;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #52e0c4;
+  color: #0a192f;
+}

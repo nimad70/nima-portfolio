@@ -7,62 +7,57 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-CTFPVLX63N');
   </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Nima Daryabar</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <!-- SEO Meta Tags -->
-  <meta name="description" content="Nima Daryabar - AI Engineer | Software Developer | Specializing in Machine Learning, LLMs, Computer Vision.">
-  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning Engineer, Software Developer, LLMs, Hugging Face, TensorFlow, Python">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Nima Daryabar - AI Engineer | Specializing in Machine Learning, LLMs, and Computer Vision.">
+  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning Engineer, Software Developer, Hugging Face, TensorFlow, Python">
   <meta name="author" content="Nima Daryabar">
   <meta property="og:title" content="Nima Daryabar - AI Engineer Portfolio">
   <meta property="og:description" content="Portfolio showcasing Machine Learning, LLMs, and Computer Vision projects.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourusername.github.io/your-portfolio/">
-  <meta property="og:image" content="profile.png">
+  <meta property="og:url" content="https://nimadaryabar.com/contact.html">
+  <meta property="og:image" content="../assets/images/profile-placeholder.png">
+
   <link rel="canonical" href="https://nimadaryabar.com/contact.html" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
-  <script src="loader.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/loader.js" defer></script>
+  <script src="../assets/js/script.js" defer></script>
 </head>
+
 <body>
+
 <div class="loader"><div class="spinner"></div></div>
 
-<nav>
-  <a href="index.html">Home</a>
+<nav class="navbar">
+  <a href="../index.html">Home</a>
   <a href="about.html">About</a>
   <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="active">Contact</a>
 </nav>
 
-<section>
-  <h2>Contact</h2>
-  <form action="https://formspree.io/f/xgvagkkd" method="POST">
+<section class="contact-section fade-in">
+  <h2>Contact Me</h2>
+  
+  <form id="contact-form" action="https://formspree.io/f/xgvagkkd" method="POST" onsubmit="showThankYouModal(); return false;">
     <input type="text" name="name" placeholder="Your Name" required><br>
     <input type="email" name="email" placeholder="Your Email" required><br>
     <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit">Send Message</button>
-    <input type="hidden" name="_redirect" value="https://nimadaryabar.com/thankyou.html">
+    <button type="submit" class="btn-primary">Send Message</button>
   </form>
-  
-  <!---<form action="https://formspree.io/f/xgvagkkd" method="POST">
-    <label>
-      Your email:
-      <input type="email" name="email">
-    </label>
-    <label>
-      Your message:
-      <textarea name="message"></textarea>
-    </label>
-    <!-- other form fields go here --
-    <button type="submit">Send</button>
-  </form> -->
-  
+
   <div class="social-icons">
     <a href="mailto:nima.daryabar@gmail.com" title="Email" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="40" alt="Email">
@@ -78,5 +73,24 @@
 
 <footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
 <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+<!-- Thank You Modal -->
+<div id="thankYouModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <h2>Thank You!</h2>
+    <p>Your message has been successfully sent. I will get back to you shortly.</p>
+  </div>
+</div>
+
+<script>
+function showThankYouModal() {
+  const modal = document.getElementById('thankYouModal');
+  if (modal) {
+    modal.style.display = 'block';
+  }
+}
+</script>
+
 </body>
 </html>

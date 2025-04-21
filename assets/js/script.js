@@ -29,24 +29,30 @@ scrollBtn.addEventListener('click', function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Thank You Modal Logic (for Contact page only)
-function openModal() {
-  const modal = document.getElementById('thankYouModal');
-  if (modal) {
-    modal.style.display = 'block';
-  }
-}
-function closeModal() {
-  const modal = document.getElementById('thankYouModal');
-  if (modal) {
-    modal.style.display = 'none';
-  }
-}
-
-// OPTIONAL: Close modal when clicking outside of it
-window.addEventListener('click', function(event) {
-  const modal = document.getElementById('thankYouModal');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
+// AJAX Contact Form Submission
+window.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById("contactForm");
+  if (form) form.reset();
 });
+
+// // Thank You Modal Logic (for Contact page only)
+// function openModal() {
+//   const modal = document.getElementById('thankYouModal');
+//   if (modal) {
+//     modal.style.display = 'block';
+//   }
+// }
+// function closeModal() {
+//   const modal = document.getElementById('thankYouModal');
+//   if (modal) {
+//     modal.style.display = 'none';
+//   }
+// }
+
+// // OPTIONAL: Close modal when clicking outside of it
+// window.addEventListener('click', function(event) {
+//   const modal = document.getElementById('thankYouModal');
+//   if (event.target == modal) {
+//     modal.style.display = 'none';
+//   }
+// });

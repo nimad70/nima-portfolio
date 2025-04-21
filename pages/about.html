@@ -9,11 +9,11 @@
     gtag('js', new Date());
     gtag('config', 'G-CTFPVLX63N');
   </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Nima Daryabar</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
@@ -29,12 +29,13 @@
   <meta property="og:url" content="https://nimadaryabar.com/about.html">
   <meta property="og:image" content="../assets/images/profile-placeholder.png">
   <link rel="canonical" href="https://nimadaryabar.com/about.html" />
-  
+
   <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/loader.js" defer></script>
   <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/about.js" defer></script>
 </head>
 
 <body>
@@ -48,88 +49,116 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<section class="about-section fade-in">
-  <h2>About Me</h2>
-  <p>I am a Computer Scientist specializing in AI and machine learning system deployment. Passionate about designing scalable AI solutions and deploying production-ready ML pipelines.</p>
-  
-  <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
-
-  <h2>Experience</h2>
-
-  <div class="experience-container">
-
-    <div class="experience-card">
-      <h3>AI Research Intern – Radboud University</h3>
-      <p><strong>Tech:</strong> Python, Hugging Face, LangChain, RAG, QLoRA, Fine-tuning LLMs</p>
-      <div class="experience-details">
-        <ul>
-          <li>Designed and implemented retrieval-augmented generation (RAG) pipelines for domain-specific knowledge bases.</li>
-          <li>Fine-tuned large language models (QLoRA) and evaluated performance improvements in QA tasks.</li>
-          <li>Built and deployed semantic search systems for efficient document retrieval.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="experience-card">
-      <h3>Freelance Software Developer</h3>
-      <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, REST APIs, Machine Learning Deployment</p>
-      <div class="experience-details">
-        <ul>
-          <li>Built and deployed custom machine learning models for various clients.</li>
-          <li>Created full-stack ML applications using Streamlit and Flask.</li>
-          <li>Integrated machine learning models into real-world scalable APIs.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="experience-card">
-      <h3>Front-End Developer – Jahankit Electronics</h3>
-      <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-      <div class="experience-details">
-        <ul>
-          <li>Developed responsive front-end web pages for e-commerce platforms.</li>
-          <li>Collaborated with back-end developers to integrate UIs with databases.</li>
-        </ul>
-      </div>
-    </div>
-
+<section class="hero-section fade-in">
+  <div class="about-hero-content">
+    <img src="../assets/images/profile-placeholder.png" alt="Nima Daryabar" class="about-profile-pic">
+    <h1>Nima Daryabar</h1>
+    <p>Building AI-Powered Systems for a Smarter World.</p>
+    <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
   </div>
-
-  <h2>Skills</h2>
-  <div class="skills-grid">
-
-    <div class="skill-category">
-      <h4>AI & Machine Learning</h4>
-      <ul>
-        <li>Python</li>
-        <li>TensorFlow</li>
-        <li>PyTorch</li>
-        <li>LangChain</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h4>Backend & Tools</h4>
-      <ul>
-        <li>Docker</li>
-        <li>REST APIs</li>
-        <li>Git</li>
-      </ul>
-    </div>
-
-    <div class="skill-category">
-      <h4>Cloud Platforms</h4>
-      <ul>
-        <li>Azure</li>
-      </ul>
-    </div>
-
-  </div>
-
 </section>
 
-<footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
+<section class="selector-section fade-in">
+  <div class="selector-grid">
+    <div class="selector-card" data-target="education">
+      <h3>Education</h3>
+    </div>
+    <div class="selector-card" data-target="experience">
+      <h3>Experience</h3>
+    </div>
+    <div class="selector-card" data-target="skills">
+      <h3>Skills</h3>
+    </div>
+<!--     <div class="selector-card" onclick="showSection('education')">
+      <h3>Education</h3>
+    </div>
+    <div class="selector-card" onclick="showSection('experience')">
+      <h3>Experience</h3>
+    </div>
+    <div class="selector-card" onclick="showSection('skills')">
+      <h3>Skills</h3>
+    </div> -->
+  </div>
+</section>
+
+<section class="details-section fade-in">
+  <div id="education" class="details-card hidden">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li><strong>M.Sc. in Computer Science</strong> – University of Padua, Italy (2021–2024)</li>
+      <ul>
+        <li>Specialization: AI, Machine Learning, NLP</li>
+        <li>Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems</li>
+      </ul>
+      <li><strong>B.Eng. in Computer Engineering</strong> – Bu-Ali Sina University, Iran (2010–2015)</li>
+      <ul>
+        <li>Major: Software Engineering</li>
+        <li>Thesis: Design of a Web-based Exceptional Talents Admission System</li>
+      </ul>
+    </ul>
+  </div>
+
+  <div id="experience" class="details-card hidden">
+    <h2>💼 Experience</h2>
+    <ul>
+      <li><strong>AI Research Intern</strong> – Radboud University</li>
+      <ul>
+        <li>Built RAG systems, fine-tuned LLMs, and improved QA pipelines.</li>
+      </ul>
+      <li><strong>Freelance Software Developer</strong></li>
+      <ul>
+        <li>Developed ML systems, REST APIs, and full-stack demos.</li>
+      </ul>
+      <li><strong>Front-End Developer</strong> – Jahankit Electronics</li>
+      <ul>
+        <li>Built responsive UI and collaborated on backend integrations.</li>
+      </ul>
+    </ul>
+  </div>
+
+  <div id="skills" class="details-card hidden">
+    <h2>🛠️ Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>AI & ML</h4>
+        <ul>
+          <li>Python</li>
+          <li>TensorFlow</li>
+          <li>PyTorch</li>
+          <li>LangChain</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h4>Backend & Tools</h4>
+        <ul>
+          <li>Docker</li>
+          <li>REST APIs</li>
+          <li>Git</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud</h4>
+        <ul>
+          <li>Azure</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p>
+</footer>
+
 <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.details-card');
+    sections.forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(sectionId).classList.remove('hidden');
+  }
+</script>
 
 </body>
 </html>

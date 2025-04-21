@@ -219,8 +219,8 @@ form button {
 }
 
 /* Thank You Modal */
-.modal {
-  display: none; /* Hidden by default */
+/* .modal {
+  display: none; /* Hidden by default *
   position: fixed;
   z-index: 2000;
   padding-top: 100px;
@@ -251,7 +251,7 @@ form button {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 /* Footer */
 footer {

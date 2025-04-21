@@ -42,7 +42,7 @@
   <p class="contact-subtitle">I am open to opportunities in AI, Data, and Software Engineering roles.<br>
   Let's build smarter systems together — where I can grow technically, personally, and help shape a better AI future!</p>
 
-  <form action="https://formspree.io/f/xgvagkkd" method="POST" class="contact-form">
+  <form id="contactForm" action="https://formspree.io/f/xgvagkkd" method="POST" class="contact-form">
     <div class="form-group half-width">
       <input type="text" name="name" placeholder="Your Name" required>
     </div>
@@ -52,8 +52,11 @@
     <div class="form-group">
       <textarea name="message" placeholder="Your Message" required></textarea>
     </div>
-    <button type="submit" class="btn-primary">Send Message</button>
+    <button id="my-form-button" type="submit" class="btn-primary">Send Message</button>
+    <p id="my-form-status"></p>
   </form>
+  
+  <br>
 
   <div class="social-icons smaller-icons">
     <a href="mailto:nima.daryabar@gmail.com" title="Email" target="_blank">

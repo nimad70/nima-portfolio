@@ -401,3 +401,100 @@ footer {
   border-radius: 20px;
   font-weight: bold;
 }
+
+/* About Section Enhancements */
+
+.about-hero-content {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-profile-pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #52e0c4;
+  margin-bottom: 20px;
+}
+
+.selector-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.selector-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.selector-card {
+  background: #112240;
+  padding: 20px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selector-card:hover {
+  background: #52e0c4;
+  color: #0a192f;
+  transform: translateY(-5px);
+}
+
+.details-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.details-card {
+  background: #0a192f;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.details-card.hidden {
+  display: none;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.skill-category ul {
+  padding-left: 20px;
+}
+
+/* Active Card Highlight */
+.selector-card.active {
+  background: #52e0c4;
+  color: #0a192f;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(82, 224, 196, 0.5);
+}
+
+/* Fade out effect for hidden sections */
+.details-card.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Slight breathing hover animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.selector-card:hover {
+  animation: pulse 1s infinite;
+}
+

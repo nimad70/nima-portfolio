@@ -144,16 +144,76 @@ nav a:hover {
 
 /* Contact Section */
 .contact-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
   text-align: center;
-  padding: 4rem 2rem;
 }
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccd6f6;
+  opacity: 0.8;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.half-width {
+  width: 100%;
+}
+
+@media(min-width: 768px) {
+  .half-width {
+    width: 48%;
+  }
+}
+
 form input, form textarea {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: none;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #64ffda;
+  color: #ccd6f6;
+  font-size: 1rem;
+  resize: none;
+  transition: background 0.3s ease;
 }
+
+form textarea {
+  min-height: 180px;
+}
+
+form input:focus, form textarea:focus {
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+.smaller-icons a img {
+  margin: 10px;
+  opacity: 0.8;
+  transition: transform 0.3s;
+}
+
+.smaller-icons a img:hover {
+  transform: scale(1.1);
+}
+
 form button {
   margin-top: 10px;
 }
@@ -220,6 +280,7 @@ footer {
 #scrollToTopBtn:hover {
   background-color: #52e0c4;
 }
+
 /* Hero Section with Animated Background */
 .hero-section {
   position: relative;

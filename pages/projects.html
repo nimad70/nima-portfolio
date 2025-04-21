@@ -20,22 +20,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Nima Daryabar - AI Engineer | Showcasing Projects in Machine Learning, LLMs, Computer Vision.">
-  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, LLMs, Deep Learning, Computer Vision">
+  <meta name="description" content="Nima Daryabar - AI Engineer | Specializing in Machine Learning, LLMs, and Computer Vision.">
+  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, Software Developer, LLMs, TensorFlow, Hugging Face">
   <meta name="author" content="Nima Daryabar">
-  <meta property="og:title" content="Projects - Nima Daryabar">
-  <meta property="og:description" content="Portfolio showcasing Machine Learning, LLMs, Computer Vision projects.">
+  <meta property="og:title" content="Nima Daryabar - Projects">
+  <meta property="og:description" content="Portfolio showcasing cutting-edge AI and ML projects.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nimadaryabar.com/projects.html">
   <meta property="og:image" content="../assets/images/profile-placeholder.png">
-
   <link rel="canonical" href="https://nimadaryabar.com/projects.html" />
 
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/loader.js" defer></script>
   <script src="../assets/js/script.js" defer></script>
-
 </head>
 
 <body>
@@ -52,75 +51,77 @@
 <section class="projects-section fade-in">
   <h2>My Projects</h2>
 
-  <div class="projects-list">
+  <div class="projects-container">
 
-    <!-- Featured Project -->
-    <div class="project-card featured-project">
-      <div class="project-badge">Featured</div>
-<!--       <h3><img src="../assets/images/quality-assurance.png" class="project-icon" alt="Chatbot">LLM Vulnerabilities in RAG Systems</h3> -->
-      <h3>LLM Vulnerabilities in RAG Systems</h3>
-      <div class="project-hidden">
-        <ul>
-          <li>Assess LLM Vulnerabilities: Determine the impact of corrupted data within vector databases on LLM performance</li>
-          <li>Analyze RAG System Security: Investigate how RAG architectures can be exploited through data poisoning</li>
-          <li>Develop Mitigation Strategies: Propose methods to enhance the resilience of RAG-based LLM systems against such attacks</li>
-        </ul>
-        <p><strong>Technologies:</strong> Python, Llama, Hugging Face, LangChain</p>
-      </div>
-    </div>
-
-    <!-- In Progress Project -->
-    <div class="project-card inprogress-project">
-      <div class="project-badge-inprogress">In Progress</div>
-<!--       <h3><img src="../assets/images/ai.png" class="project-icon" alt="Chatbot"> Emotion-Aware Chatbot</h3> -->
-      <h3>Emotion-Aware Chatbot</h3>
-      <div class="project-hidden">
-        <ul>
-          <li>Real-time emotion detection from webcam input</li>
-          <li>Adaptive conversations powered by LangChain</li>
-          <li>Deployed via Streamlit with mobile-first responsive design</li>
-        </ul>
-        <p><strong>Technologies:</strong> Python, OpenCV, Hugging Face, LangChain, Streamlit</p>
-      </div>
-    </div>
-
-    <!-- Normal Projects -->
     <div class="project-card">
-<!--       <h3><img src="../assets/images/qa.png" class="project-icon" alt="QA"> Optimizing QA in LLMs</h3> -->
-      <h3>Optimizing QA in LLMs</h3>
-      <div class="project-hidden">
+      <div class="project-header">
+        <h3>LLM Vulnerabilities in RAG Systems</h3>
+        <span class="badge featured">Featured</span>
+      </div>
+      <div class="project-description">
         <ul>
-          <li>Fine-tuned Mistral 7B for dynamic QA with RAG</li>
-          <li>Achieved 95% QA performance (from 84%)</li>
-          <li>Optimized retrievals using RAFT techniques</li>
+          <li>Analyzed security threats in Retrieval-Augmented Generation (RAG) pipelines.</li>
+          <li>Exposed attack vectors using poisoned vector databases.</li>
+          <li>Proposed defense strategies to mitigate risks.</li>
+          <li><strong>Technologies:</strong> Python, Hugging Face, LangChain, RAG Systems</li>
         </ul>
-        <p><strong>Technologies:</strong> Python, Hugging Face, FAISS, RAG Systems</p>
       </div>
     </div>
 
     <div class="project-card">
-<!--       <h3><img src="../assets/images/eye-examination.png" class="project-icon" alt="Medical"> Diabetic Retinopathy Detection</h3> -->
-      <h3>Diabetic Retinopathy Detection</h3>
-      <div class="project-hidden">
+      <div class="project-header">
+        <h3>Emotion-Aware Chatbot</h3>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="project-description">
         <ul>
-          <li>Classified retinal images with Inception V3 CNN</li>
-          <li>Designed augmentation pipeline for better generalization</li>
-          <li>Achieved 79% medical imaging accuracy</li>
+          <li>Integrated face detection with LangChain adaptive dialogues.</li>
+          <li>Built personalized conversation flows based on user emotion analysis.</li>
+          <li>Real-time emotion detection from webcam feeds.</li>
+          <li><strong>Technologies:</strong> OpenCV, TensorFlow, LangChain, Streamlit</li>
         </ul>
-        <p><strong>Technologies:</strong> Python, TensorFlow, Keras, OpenCV</p>
       </div>
     </div>
 
     <div class="project-card">
-<!--       <h3><img src="../assets/images/pricing.png" class="project-icon" alt="Pricing"> ML-Based Surge Pricing Predictor</h3> -->
-      <h3>ML-Based Surge Pricing Predictor</h3>
-      <div class="project-hidden">
+      <div class="project-header">
+        <h3>Optimizing QA in LLMs</h3>
+      </div>
+      <div class="project-description">
         <ul>
-          <li>Built predictive models for market price surge detection</li>
-          <li>Integrated models into scalable backend API</li>
-          <li>Delivered 76% precision across multi-city datasets</li>
+          <li>Boosted QA performance from 84% to 95% using RAG + RAFT architecture.</li>
+          <li>Evaluated fine-tuned Mistral-7B models for domain-specific datasets.</li>
+          <li>Experimented with context optimization techniques for better LLM answers.</li>
+          <li><strong>Technologies:</strong> Python, Hugging Face, Mistral 7B, RAFT</li>
         </ul>
-        <p><strong>Technologies:</strong> Python, Scikit-Learn, Flask, REST API</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Diabetic Retinopathy Detection</h3>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Built an ML model to classify retinal images with high precision (79% accuracy).</li>
+          <li>Used InceptionV3 CNN architecture with custom data augmentation pipelines.</li>
+          <li>Deployed prototype system for fast diagnosis assistance.</li>
+          <li><strong>Technologies:</strong> TensorFlow, Keras, InceptionV3, OpenCV</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>ML-Based Surge Pricing Predictor</h3>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Predicted market surge prices with 76% precision using time series ML models.</li>
+          <li>Feature-engineered seasonal, trend, and external variables.</li>
+          <li>Deployed lightweight prediction APIs for real-time use cases.</li>
+          <li><strong>Technologies:</strong> Python, Scikit-learn, Streamlit, REST APIs</li>
+        </ul>
       </div>
     </div>
 
@@ -128,21 +129,7 @@
 
 </section>
 
-<footer>
-  <p style="font-size: 0.8rem; opacity: 0.7;">
-    🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar
-<!--     <br><br>
-    Icons by
-    <a href="https://www.flaticon.com/free-icons/video" title="video icons created by Graficon - Flaticon"  target="_blank" style="color: #64ffda;">Video icons</a>,
-    <a href="https://www.flaticon.com/free-icons/quality-assurance" title="quality assurance icons created by Slamlabs - Flaticon"  target="_blank" style="color: #64ffda;">Quality assurance icons</a>,
-    <a href="https://www.flaticon.com/free-icons/eye-test" title="eye-test icons created by Linector - Flaticon" target="_blank" style="color: #64ffda;">Eye-test icons</a>,
-    <a href="https://www.flaticon.com/free-icons/qa" title="qa icons created by Freepik - Flaticon" target="_blank" style="color: #64ffda;">Qa icons</a>,
-    <a href="https://www.flaticon.com/free-icons/pricing" title="pricing icons created by monkik - Flaticon" target="_blank" style="color: #64ffda;">Pricing icons</a>
-    from Flaticon. -->
-  </p>
-</footer>
-
-
+<footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
 <button id="scrollToTopBtn" title="Go to top">↑</button>
 
 </body>

@@ -329,6 +329,27 @@ footer {
 
 .btn-primary {
   display: inline-block;
+  padding: 14px 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #52e0c4;
+  border: 2px solid #52e0c4;
+  border-radius: 30px;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 0 0px rgba(82, 224, 196, 0.7);
+}
+
+.btn-primary:hover {
+  background-color: #52e0c4;
+  color: #0a192f;
+  box-shadow: 0 0 15px rgba(82, 224, 196, 0.8);
+  transform: scale(1.05);
+}
+
+/* .btn-primary {
+  display: inline-block;
   padding: 12px 28px;
   font-weight: 600;
   font-size: 1.1rem;
@@ -342,7 +363,7 @@ footer {
 .btn-primary:hover {
   background-color: #52e0c4;
   color: #0a192f;
-}
+} */
 
 /* Projects Section Styling */
 .projects-section {
@@ -446,19 +467,75 @@ footer {
 }
 
 /* About Section Enhancements */
-.about-hero-content {
+/* .about-hero-content {
   text-align: center;
   padding: 80px 20px;
+} */
+
+/* About Page Hero Section */
+/* .hero-section.alt-height {
+    min-height: 60vh;
+} */
+
+.about-hero-content {
+  text-align: center;
+  min-height: 30vh;
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.about-profile-pic {
+.about-hero-content h1 {
+  font-size: 3rem;
+  color: #64ffda;
+  margin-bottom: 20px;
+}
+
+.about-intro {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #ccd6f6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Optional Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #52e0c4;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.about-profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* .about-profile-pic {
   width: 140px;
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #52e0c4;
   margin-bottom: 20px;
-}
+} */
 
 .selector-section {
   padding: 40px 20px;

@@ -590,6 +590,18 @@ nav a:hover {
   }
 }
 
+.tech-label {
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.tech-list {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* space between each tech name */
+}
+
 /* ========================
        Contact Section
 ========================= */

@@ -35,6 +35,21 @@ window.addEventListener('DOMContentLoaded', function() {
   if (form) form.reset();
 });
 
+function showDetails(sectionId) {
+  const cards = document.querySelectorAll('.selector-card');
+  const sections = document.querySelectorAll('.details-card');
+
+  cards.forEach(card => {
+    card.classList.remove('active');
+  });
+  sections.forEach(section => {
+    section.classList.add('hidden');
+  });
+
+  document.getElementById(sectionId).classList.remove('hidden');
+  document.querySelector(`[onclick="showDetails('${sectionId}')"]`).classList.add('active');
+}
+
 // // Thank You Modal Logic (for Contact page only)
 // function openModal() {
 //   const modal = document.getElementById('thankYouModal');

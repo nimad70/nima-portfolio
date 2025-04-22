@@ -39,3 +39,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
+// Smooth fade-in for default open section (Education)
+const defaultSection = document.getElementById('education');
+if (defaultSection) {
+  defaultSection.style.opacity = '0';
+  defaultSection.style.transform = 'translateY(20px)';
+  setTimeout(() => {
+    defaultSection.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    defaultSection.style.opacity = '1';
+    defaultSection.style.transform = 'translateY(0)';
+  }, 100);
+}

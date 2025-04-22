@@ -10,9 +10,9 @@
     gtag('config', 'G-CTFPVLX63N');
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Nima Daryabar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Nima Daryabar</title>
 
   <!-- Favicon -->
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
@@ -20,26 +20,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Nima Daryabar - AI Engineer specializing in Machine Learning, LLM optimization, RAG systems, and Generative AI solutions.">
-  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, Generative AI, LLM Optimization, RAG Systems, Software Developer, Software Engineer, TensorFlow, PyTorch, Python, C++, LangChain, Hugging Face">
+  <meta name="description" content="Nima Daryabar - AI Engineer | Specializing in Machine Learning, LLMs, and Computer Vision.">
+  <meta name="keywords" content="Nima Daryabar, AI Engineer, Machine Learning, Software Developer, LLMs, TensorFlow, Hugging Face">
   <meta name="author" content="Nima Daryabar">
-
-  <!-- Open Graph Tags (for social sharing) -->
-  <meta property="og:title" content="Nima Daryabar - AI Engineer Portfolio">
-  <meta property="og:description" content="Portfolio showcasing expertise in AI, Machine Learning, LLM optimization, RAG pipelines, and secure AI engineering.">
+  <meta property="og:title" content="Nima Daryabar - Projects">
+  <meta property="og:description" content="Portfolio showcasing cutting-edge AI and ML projects.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nimadaryabar.com/about.html">
-  <meta property="og:image" content="https://nimadaryabar.com/assets/images/profile.png"> <!-- (replace with real photo if you have later) -->
+  <meta property="og:url" content="https://nimadaryabar.com/projects.html">
+  <meta property="og:image" content="../assets/images/profile-placeholder.png">
+  <link rel="canonical" href="https://nimadaryabar.com/projects.html" />
 
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://nimadaryabar.com/about.html" />
-
-  <!-- Fonts & CSS -->
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/loader.js" defer></script>
   <script src="../assets/js/script.js" defer></script>
-  <script src="../assets/js/about.js" defer></script>
 </head>
 
 <body>
@@ -48,213 +43,150 @@
 
 <nav class="navbar">
   <a href="../index.html">Home</a>
-  <a href="about.html" class="active">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="projects.html" class="active">Projects</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<section class="about-hero-content fade-in">
-  <img src="../assets/images/profile.png" alt="Nima Daryabar" class="about-profile-img">
+<section class="projects-section fade-in">
+  <h2>My Projects</h2>
 
-  <h1>About Me</h1>
+  <div class="projects-container">
 
-  <p class="about-intro">
-    I am an AI Engineer specializing in Machine Learning, LLM optimization, and RAG systems.
-    My current focus is on Generative AI and AI agents for building smarter, adaptive solutions.
-  </p>
+    <div class="project-card">
+      <div class="project-header">
+        <h3>LLM Vulnerabilities in RAG Systems</h3>
+        <span class="badge featured">Featured</span>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Exposed 40% performance drops in RAG systems via poisoned vector databases; proposed mitigation strategies.</li>
+          <li>Built a scalable fine-tuning setup for LLaMA-2 using LoRA/QLoRA and 4-bit quantization.</li>
+          <li>Developed a semantic QA pipeline with ChromaDB, InstructorEmbedding, and LangChain integration.</li>
+          <li>Streamlined large-scale document processing with PyPDFLoader and SentenceTransformers.</li>
+          <!-- <li><strong>Technologies:</strong> Python, Hugging Face, LangChain, RAG Systems</li> -->
+          <li>
+            <div class="tech-label"><strong>Technologies:</strong></div>
+            <div class="tech-list">
+              <span>Python</span>
+              <span>Hugging Face</span>
+              <span>LangChain</span>
+              <span>ChromaDB</span>
+              <span>InstructorEmbedding</span>
+              <span>RAG Systems</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
-</section>
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Emotion-Aware Chatbot</h3>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Developing a real-time face detection and emotion classification system using OpenCV, Streamlit, and ResNet SSD with EfficientNetB0.</li>
+          <li>Converted EfficientNetB0 to TensorFlow Lite with float16 quantization for efficient mobile deployment.</li>
+          <li>Designed a Streamlit interface with live webcam, bounding box toggling, and confidence threshold tuning.</li>
+          <li>Integrating a Hugging Face-powered chatbot using LangChain to adapt conversations based on detected emotions.</li>
+          <li>Containerizing the full application with Docker for reproducible, cross-platform deployment.</li>
+          <li>
+            <div class="tech-label"><strong>Technologies:</strong></div>
+            <div class="tech-list">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>TensorFlow</span>
+              <span>Streamlit</span>
+              <span>Gradio</span>
+              <span>Hugging Face</span>
+              <span>LangChain</span>
+              <span>Docker</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<section class="selector-section">
-  <div class="selector-grid">
-    <div class="selector-card active" data-target="education">Education</div>
-  <div class="selector-card" data-target="experience">Wrok Experience</div>
-  <div class="selector-card" data-target="skills">Skills</div>
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Optimizing Question-Answering in LLMs</h3>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Developed a medical QA assistant using Mistral 7B v0.2, with LoRA/QLoRA fine-tuning and RAG/RAFT techniques for enhanced response quality.</li>
+          <li>Built a retrieval-augmented pipeline to supply domain-specific medical context during model inference.</li>
+          <li>Fine-tuned the model on curated medical datasets (MedQuad, MedicalQA), boosting answer accuracy from 84% to over 95%.</li>
+          <li>
+            <div class="tech-label"><strong>Technologies:</strong></div>
+            <div class="tech-list">
+              <span>Python</span>
+              <span>Mistral 7B</span>
+              <span>Hugging Face</span>
+              <span>LangChain</span>
+              <span>LoRA</span>
+              <span>QLoRA</span>
+              <span>RAFT</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Diabetic Retinopathy Detection</h3>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Built a deep learning model with Inception V3 (TensorFlow/Keras) using transfer learning to classify retinal images into five severity categories.</li>
+          <li>Achieved 79% accuracy on the APTOS 2019 Blindness Detection dataset through model fine-tuning and hyperparameter optimization.</li>
+          <li>Enhanced diagnostic performance by applying preprocessing techniques such as Gaussian blur, CLAHE, and edge detection (Sobel, Canny) with OpenCV.</li>
+          <li>
+            <div class="tech-label"><strong>Technologies:</strong></div>
+            <div class="tech-list">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Keras</span>
+              <span>OpenCV</span>
+              <span>Inception V3</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Machine Learning-based Surge Pricing Predictor</h3>
+      </div>
+      <div class="project-description">
+        <ul>
+          <li>Built machine learning models (XGBoost, Random Forest, SVM, Neural Networks) to predict price surges in hourly market data.</li>
+          <li>Achieved 76% precision by fine-tuning models on historical pricing patterns and market movement trends.</li>
+          <li>Applied Principal Component Analysis (PCA) for feature selection and dimensionality reduction to improve model performance.</li>
+          <li>
+            <div class="tech-label"><strong>Technologies:</strong></div>
+            <div class="tech-list">
+              <span>Python</span>
+              <span>XGBoost</span>
+              <span>Random Forest</span>
+              <span>SVM</span>
+              <span>Neural Networks</span>
+              <span>Scikit-learn</span>
+              <span>PCA</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="details-section">
-
-  <!-- EDUCATION -->
-  <div id="education" class="details-card">
-    <div class="timeline-item">
-      <h3>M.Sc. in Computer Science</h3>
-      <p class="timeline-location">University of Padua, Italy (2021–2024)</p>
-      <p class="timeline-detail">
-        • Specialization: AI, ML, NLP<br>
-        • Technologies: PyTorch, TensorFlow, Deep Learning (RNN, CNN, LSTM, Transformers)<br>
-        • Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>B.Eng. in Computer Engineering</h3>
-      <p class="timeline-location">Bu-Ali Sina University, Iran (2010–2015)</p>
-      <p class="timeline-detail">
-        • Major: Software Engineering<br>
-        • Focused on: Algorithms, SQL, OOP (C, C++)<br>
-        • Thesis: Design of a Web-based Exceptional Talents Admission System
-      </p>
-    </div>
-  </div>
-
-  <!-- <div id="education" class="details-card">
-    <ul class="education-list">
-      <li>
-        <strong>M.Sc. in Computer Science</strong> — University of Padua, Italy (2021–2024)
-        <ul>
-          <li>Specialization: Artificial Intelligence, Machine Learning, and NLP</li>
-          <li>PyTorch, TensorFlow (ML), Deep Learning (RNN, CNN, LSTM, Transformers, Autoencoders), LLMs</li>
-          <li>Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems</li>
-        </ul>
-      </li>
-      <li>
-        <strong>B.Eng. in Computer Engineering</strong> — Bu-Ali Sina University, Iran (2010–2015)
-        <ul>
-          <li>Major: Software Engineering</li>
-          <li> Focused on: Algorithms, Database Systems (SQL, Microsoft SQL Server), Object-Oriented Programming (C, C++)</li>
-          <li>Thesis: Design of a Web-based Exceptional Talents Admission System</li>
-        </ul>
-      </li>
-    </ul>
-  </div> -->
-
-  <!-- EXPERIENCE -->
-  <div id="experience" class="details-card hidden">
-    <div class="timeline-item">
-      <h3>AI Research Intern – LLMs</h3>
-      <p class="timeline-location">ICIS, Radboud University, Nijmegen, Netherlands (Oct 2023 – Mar 2024)</p>
-      <p class="timeline-detail">
-        • Built RAG pipelines, fine-tuned LLMs, improved QA systems.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Freelance Software Developer</h3>
-      <p class="timeline-location">Remote (2019–2022)</p>
-      <p class="timeline-detail">
-        • Developed ML systems, REST APIs, full-stack demos.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Front-End Developer</h3>
-      <p class="timeline-location">Jahankit Electronics, Tehran, Iran (2016–2019)</p>
-      <p class="timeline-detail">
-        • Built responsive UI and collaborated on backend APIs.
-      </p>
-    </div>
-    </div>
-
-  <!-- <div id="experience" class="details-card hidden">
-    <ul class="experience-list">
-      <li>
-        <strong>AI Research Intern – LLMs</strong> — ICIS, Radboud University, Nijmegen, Netherlands (Oct 2023 – Mar 2024)
-        <ul>
-          <li>Built RAG pipelines, fine-tuned LLMs, and improved QA systems.</li>
-        </ul>
-      </li>
-      <li>
-        <strong> AI Research Intern- LLMs</strong> — ICIS, Radboud University, Nijmegen, Netherlands (Oct 2023 – Mar 2024)
-        <ul>
-          <li>Built RAG pipelines, fine-tuned LLMs, and improved QA systems.</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Freelance Software Developer</strong> (2019 – 2022)
-        <ul>
-          <li>Developed ML systems, REST APIs, and full-stack demos.</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Front-End Developer</strong> — Jahankit Electronics (2016 – 2019)
-        <ul>
-          <li>Built responsive UI and collaborated on backend integrations.</li>
-        </ul>
-      </li>
-    </ul>
-  </div> -->
-
-  <!-- SKILLS -->
-  <div id="skills" class="details-card hidden">
-    <div class="skills-grid">
-
-      <div class="skill-category">
-        <h4>AI & Machine Learning</h4>
-        <div class="skill-badges">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">LangChain</span>
-
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h4>Backend & Tools</h4>
-        <div class="skill-badges">
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Git</span>
-
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h4>Backend & Tools</h4>
-        <div class="skill-badges">
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Git</span>
-
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h4>Cloud</h4>
-        <div class="skill-badges">
-          <span class="skill-tag">Azure</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- <div id="skills" class="details-card hidden">
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>AI & ML</h4>
-        <ul>
-          <li>Python</li>
-          <li>TensorFlow</li>
-          <li>PyTorch</li>
-          <li>LangChain</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Backend & Tools</h4>
-        <ul>
-          <li>Docker</li>
-          <li>REST APIs</li>
-          <li>Git</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Cloud</h4>
-        <ul>
-          <li>Azure</li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-
-</section>
-
-<footer>
-  <p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p>
-</footer>
-
+<footer><p style="font-size: 0.8rem; opacity: 0.7;">🔒 Domain Secured · SSL Enabled · © 2025 Nima Daryabar</p></footer>
 <button id="scrollToTopBtn" title="Go to top">↑</button>
 
 </body>

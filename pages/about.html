@@ -29,7 +29,7 @@
   <meta property="og:description" content="Portfolio showcasing expertise in AI, Machine Learning, LLM optimization, RAG pipelines, and secure AI engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nimadaryabar.com/about.html">
-  <meta property="og:image" content="https://nimadaryabar.com/assets/images/profile-placeholder.png"> <!-- (replace with real photo if you have later) -->
+  <meta property="og:image" content="https://nimadaryabar.com/assets/images/profile.png"> <!-- (replace with real photo if you have later) -->
 
   <!-- Canonical Link -->
   <link rel="canonical" href="https://nimadaryabar.com/about.html" />
@@ -69,7 +69,7 @@
 <section class="selector-section">
   <div class="selector-grid">
     <div class="selector-card active" data-target="education">Education</div>
-  <div class="selector-card" data-target="experience">Experience</div>
+  <div class="selector-card" data-target="experience">Wrok Experience</div>
   <div class="selector-card" data-target="skills">Skills</div>
   </div>
 </section>
@@ -78,74 +78,160 @@
 
   <!-- EDUCATION -->
   <div id="education" class="details-card">
-    <ul class="education-list">
-      <li>
-        <strong>M.Sc. in Computer Science</strong> — University of Padua, Italy (2021–2024)
-        <ul>
-          <li>Specialization: AI, Machine Learning, NLP</li>
+    <div class="timeline-item">
+      <h3>M.Sc. in Computer Science</h3>
+      <p class="timeline-location">University of Padua, Padua, Italy (2021–2024)</p>
+      <p class="timeline-detail">
+        <!-- <ul>
+          <li>Specialization: Artificial Intelligence, Machine Learning, and NLP</li>
+          <li>Skills: PyTorch, TensorFlow, Deep Learning (RNN, CNN, LSTM, Transformers)</li>
           <li>Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems</li>
-        </ul>
-      </li>
-      <li>
-        <strong>B.Eng. in Computer Engineering</strong> — Bu-Ali Sina University, Iran (2010–2015)
-        <ul>
-          <li>Major: Software Engineering</li>
-          <li>Thesis: Design of a Web-based Exceptional Talents Admission System</li>
-        </ul>
-      </li>
-    </ul>
+        </ul> -->
+        • Specialization: Artificial Intelligence, Machine Learning, and NLP<br>
+        • Skills: PyTorch, TensorFlow, Deep Learning (RNN, CNN, LSTM, Transformers)<br>
+        • Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>B.Eng. in Computer Engineering</h3>
+      <p class="timeline-location">Bu-Ali Sina University, Hamedan, Iran (2010–2015)</p>
+      <p class="timeline-detail">
+        • Major: Software Engineering<br>
+        • Focused on: Algorithms, SQL, OOP (C, C++)<br>
+        • Thesis: Design of a Web-based Exceptional Talents Admission System
+      </p>
+    </div>
   </div>
 
   <!-- EXPERIENCE -->
   <div id="experience" class="details-card hidden">
-    <ul class="experience-list">
-      <li>
-        <strong>AI Research Intern</strong> — Radboud University (Oct 2023 – Mar 2024)
+    <div class="experience-card">
+      <h3 class="experience-header">AI Research Intern – LLMs</h3>
+      <p class="experience-location">ICIS, Radboud University, Nijmegen, Netherlands (Oct 2023 – Mar 2024)</p>
+
+      <div class="experience-details">
         <ul>
-          <li>Built RAG pipelines, fine-tuned LLMs, and improved QA systems.</li>
+          <li>Conducted research on vulnerabilities of LLMs within RAG systems through poisoned vector databases, demonstrating up to 40% performance degradation.</li>
+          <li>Implemented memory-efficient fine-tuning for LLaMA-2 models (LoRA, QLoRA, 8-bit/4-bit quantization), enhancing scalability.</li>
+          <li>Developed a semantic search-driven QA pipeline using ChromaDB and InstructorEmbedding for high-quality contextual retrieval; using LangChain for task integration.</li>
+          <li>Streamlined document preprocessing and embedding workflows using PyPDFLoader and SentenceTransformers, optimizing processing of large unstructured datasets.</li>
         </ul>
-      </li>
-      <li>
-        <strong>Freelance Software Developer</strong> (2019 – 2022)
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3 class="experience-header">Freelance Software Developer</h3>
+      <p class="experience-location">Remote (Oct 2017 – Jul 2021)</p>
+
+      <div class="experience-details">
         <ul>
-          <li>Developed ML systems, REST APIs, and full-stack demos.</li>
+          <li>Delivered machine learning solutions, including a second-hand car price prediction system that explained over 90% of price variability (R² ≈ 0.90), using Python, Scikit-learn, and Decision Tree Regression. Improved data quality through feature engineering, missing value handling, and categorical encoding. Implementing web scraping with BeautifulSoup and Requests, and managed data storage using MySQL.</li>
+          <li>Led the development of a personalized fitness coach Android app at Mecatec using Java and Android Studio.</li>
+          <li>Developed robust web applications with Django, PHP, AngularJS, and JavaScript, emphasizing responsive design and scalable back-end architectures.</li>
+          <li>Collaborated closely with clients to create tailored software, and enhance operational efficiency.</li>
         </ul>
-      </li>
-      <li>
-        <strong>Front-End Developer</strong> — Jahankit Electronics (2016 – 2019)
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3 class="experience-header">Front-End Developer</h3>
+      <p class="experience-location">Jahankit Electronics, Tehran, Iran (Mar 2017 – Sep 2017)</p>
+
+      <div class="experience-details">
         <ul>
-          <li>Built responsive UI and collaborated on backend integrations.</li>
+          <li>Led Scrum adoption, improving team efficiency and project delivery through Agile methodologies.</li>
+          <li>Developed a responsive e-commerce platform using JavaScript and Bootstrap, enhancing user engagement and contributing to a 20% increase in online sales.</li>
+          <li>Enhanced customer experience through focused user research and modular front-end implementation, achieving high user satisfaction.</li>
         </ul>
-      </li>
-    </ul>
-  </div>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3 class="experience-header">Full Stack Developer</h3>
+      <p class="experience-location">Mecatec, Hamedan, Iran (Feb 2016 - Dec 2016)</p>
+
+      <div class="experience-details">
+        <ul>
+          <li>Developed responsive websites with PHP, JavaScript, CSS3, and MySQL, ensuring seamless functionality and scalability.</li>
+          <li>Improved website performance through optimized front-end design and database performance, increasing user engagement.</li>
+          <li>Collaborated within an agile team to deliver scalable, client-focused solutions tailored to client needs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <h3 class="experience-header">Web Development Intern</h3>
+      <p class="experience-location">Bu-Ali Sina University, Hamedan , Iran (Jun 2014 - Sep 2014)</p>
+
+      <div class="experience-details">
+        <ul>
+          <li>Designed and implemented a student-focused auction website to sell and trade books and goods using HTML5, CSS3, PHP, and MySQL, enhancing community trading and campus engagement.</li>
+        </ul>
+      </div>
+    </div>
+    </div>
 
   <!-- SKILLS -->
   <div id="skills" class="details-card hidden">
     <div class="skills-grid">
+
       <div class="skill-category">
-        <h4>AI & ML</h4>
-        <ul>
-          <li>Python</li>
-          <li>TensorFlow</li>
-          <li>PyTorch</li>
-          <li>LangChain</li>
-        </ul>
+        <h4>Programming Languages</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">R</span>
+        </div>
       </div>
+
       <div class="skill-category">
-        <h4>Backend & Tools</h4>
-        <ul>
-          <li>Docker</li>
-          <li>REST APIs</li>
-          <li>Git</li>
-        </ul>
+        <h4>Databases</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">NoSQL (MongoDB)</span>
+        </div>
       </div>
+
       <div class="skill-category">
-        <h4>Cloud</h4>
-        <ul>
-          <li>Azure</li>
-        </ul>
+        <h4>AI/ML Frameworks and Libraries</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">pandas</span>
+        </div>
       </div>
+
+      <div class="skill-category">
+        <h4>AI Techniques and Concepts</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">Fine-tuning (LoRA/QLoRA)</span>
+          <span class="skill-tag">RAG (Retrieval-Augmented Generation)</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">Data Preprocessing</span>
+          <span class="skill-tag">Computer Vision</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4>Cloud & DevOps Tools</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4>Software Development</h4>
+        <div class="skill-badges">
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </div>
+
     </div>
   </div>
 

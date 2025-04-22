@@ -466,17 +466,6 @@ footer {
   }
 }
 
-/* About Section Enhancements */
-/* .about-hero-content {
-  text-align: center;
-  padding: 80px 20px;
-} */
-
-/* About Page Hero Section */
-/* .hero-section.alt-height {
-    min-height: 60vh;
-} */
-
 .about-hero-content {
   text-align: center;
   min-height: 30vh;
@@ -528,15 +517,6 @@ footer {
   transform: scale(1.05);
 }
 
-/* .about-profile-pic {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #52e0c4;
-  margin-bottom: 20px;
-} */
-
 .selector-section {
   padding: 40px 20px;
   text-align: center;
@@ -555,6 +535,7 @@ footer {
   padding: 20px 40px;
   border-radius: 12px;
   cursor: pointer;
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
@@ -562,6 +543,14 @@ footer {
   background: #52e0c4;
   color: #0a192f;
   transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(82, 224, 196, 0.6);
+}
+
+.selector-card.active {
+  background: #52e0c4;
+  color: #0a192f;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(82, 224, 196, 0.6);
 }
 
 .details-section {
@@ -575,10 +564,16 @@ footer {
   padding: 30px;
   border-radius: 12px;
   margin-top: 30px;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .details-card.hidden {
   display: none;
+}
+
+.education-list li, .experience-list li {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .skills-grid {
@@ -588,31 +583,22 @@ footer {
   margin-top: 20px;
 }
 
-.skill-category ul {
-  padding-left: 20px;
+.skill-category ul li {
+  display: inline-block;
+  background: #112240;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
-/* Active Card Highlight */
-.selector-card.active {
+.skill-category ul li:hover {
   background: #52e0c4;
   color: #0a192f;
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(82, 224, 196, 0.5);
 }
 
-/* Fade out effect for hidden sections */
-.details-card.fade-out {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Slight breathing hover animation */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
-.selector-card:hover {
-  animation: pulse 1s infinite;
+/* FadeIn Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }

@@ -62,78 +62,62 @@
   <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
 </section>
 
-<!--
-<section class="hero-section fade-in alt-height">
-  <div class="about-hero-content">
-    <img src="../assets/images/profile-placeholder.png" alt="Nima Daryabar" class="about-profile-pic">
-    <h1>Nima Daryabar</h1>
-    <p>I am an AI Engineer specializing in Machine Learning, LLM optimization, and RAG systems.</p>
-    <p>My focus is on Generative AI and AI agents for creating smarter, adaptive solutions.</p>
-
-    <a href="../assets/files/Nima_Daryabar_Resume.pdf" class="btn-primary" download>Download My CV</a>
-  </div>
-</section> -->
-
-<section class="selector-section fade-in">
+<section class="selector-section">
   <div class="selector-grid">
-    <div class="selector-card" data-target="education">
-      <h3>Education</h3>
-    </div>
-    <div class="selector-card" data-target="experience">
-      <h3>Experience</h3>
-    </div>
-    <div class="selector-card" data-target="skills">
-      <h3>Skills</h3>
-    </div>
-<!--     <div class="selector-card" onclick="showSection('education')">
-      <h3>Education</h3>
-    </div>
-    <div class="selector-card" onclick="showSection('experience')">
-      <h3>Experience</h3>
-    </div>
-    <div class="selector-card" onclick="showSection('skills')">
-      <h3>Skills</h3>
-    </div> -->
+    <div class="selector-card active" data-target="education">Education</div>
+  <div class="selector-card" data-target="experience">Experience</div>
+  <div class="selector-card" data-target="skills">Skills</div>
   </div>
 </section>
 
-<section class="details-section fade-in">
-  <div id="education" class="details-card hidden">
-    <h2>🎓 Education</h2>
-    <ul>
-      <li><strong>M.Sc. in Computer Science</strong> – University of Padua, Italy (2021–2024)</li>
-      <ul>
-        <li>Specialization: AI, Machine Learning, NLP</li>
-        <li>Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems</li>
-      </ul>
-      <li><strong>B.Eng. in Computer Engineering</strong> – Bu-Ali Sina University, Iran (2010–2015)</li>
-      <ul>
-        <li>Major: Software Engineering</li>
-        <li>Thesis: Design of a Web-based Exceptional Talents Admission System</li>
-      </ul>
+<section class="details-section">
+
+  <!-- EDUCATION -->
+  <div id="education" class="details-card">
+    <ul class="education-list">
+      <li>
+        <strong>M.Sc. in Computer Science</strong> — University of Padua, Italy (2021–2024)
+        <ul>
+          <li>Specialization: AI, Machine Learning, NLP</li>
+          <li>Thesis: Exposing LLM Vulnerabilities through Poisoned Vector Databases in RAG Systems</li>
+        </ul>
+      </li>
+      <li>
+        <strong>B.Eng. in Computer Engineering</strong> — Bu-Ali Sina University, Iran (2010–2015)
+        <ul>
+          <li>Major: Software Engineering</li>
+          <li>Thesis: Design of a Web-based Exceptional Talents Admission System</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
+  <!-- EXPERIENCE -->
   <div id="experience" class="details-card hidden">
-    <h2>💼 Experience</h2>
-    <ul>
-      <li><strong>AI Research Intern</strong> – Radboud University</li>
-      <ul>
-        <li>Built RAG systems, fine-tuned LLMs, and improved QA pipelines.</li>
-      </ul>
-      <li><strong>Freelance Software Developer</strong></li>
-      <ul>
-        <li>Developed ML systems, REST APIs, and full-stack demos.</li>
-      </ul>
-      <li><strong>Front-End Developer</strong> – Jahankit Electronics</li>
-      <ul>
-        <li>Built responsive UI and collaborated on backend integrations.</li>
-      </ul>
+    <ul class="experience-list">
+      <li>
+        <strong>AI Research Intern</strong> — Radboud University (Oct 2023 – Mar 2024)
+        <ul>
+          <li>Built RAG pipelines, fine-tuned LLMs, and improved QA systems.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Freelance Software Developer</strong> (2019 – 2022)
+        <ul>
+          <li>Developed ML systems, REST APIs, and full-stack demos.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Front-End Developer</strong> — Jahankit Electronics (2016 – 2019)
+        <ul>
+          <li>Built responsive UI and collaborated on backend integrations.</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
+  <!-- SKILLS -->
   <div id="skills" class="details-card hidden">
-    <h2>🛠️ Skills</h2>
     <div class="skills-grid">
       <div class="skill-category">
         <h4>AI & ML</h4>
@@ -160,6 +144,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <footer>
@@ -167,14 +152,6 @@
 </footer>
 
 <button id="scrollToTopBtn" title="Go to top">↑</button>
-
-<script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.details-card');
-    sections.forEach(sec => sec.classList.add('hidden'));
-    document.getElementById(sectionId).classList.remove('hidden');
-  }
-</script>
 
 </body>
 </html>

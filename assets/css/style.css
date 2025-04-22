@@ -606,7 +606,7 @@ nav a:hover {
        Contact Section
 ========================= */
 .contact-section {
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -664,6 +664,10 @@ form textarea {
 form input:focus, form textarea:focus {
   background: rgba(255, 255, 255, 0.12);
   outline: none;
+}
+
+.smaller-icons a {
+  text-decoration: none; /* Remove underline from social icon links */
 }
 
 .smaller-icons a img {

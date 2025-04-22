@@ -334,40 +334,74 @@ nav a:hover {
 }
 
 /* Experience Section */
+.experience-details {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding-left: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #ccd6f6;
+}
+
+/* .experience-details {
+  margin-top: 10px;
+} */
+
+.experience-details ul {
+  padding-left: 20px;
+}
+
+.experience-details ul li {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.experience-header {
+  font-size: 1.8rem;
+  color: #64ffda;
+  margin-bottom: 8px;
+}
+
+.experience-location {
+  font-size: 1rem;
+  color: #8892b0;
+  margin-bottom: 20px;
+}
+
 .experience-container {
   display: grid;
   gap: 20px;
   margin-top: 2rem;
 }
+
 .experience-card {
   background: #112240;
   padding: 1rem;
   border-radius: 10px;
+  margin-bottom: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+
 .experience-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
-.experience-details {
-  margin-top: 10px;
-}
 
 /* Skills Section */
-/* .skills-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 2rem;
-} */
-
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 20px;
 }
+
+/* .skills-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+} */
 
 .skill-category ul {
   list-style: none;
@@ -420,8 +454,9 @@ nav a:hover {
 
 /* timeline Items */
 .timeline-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #64ffda;
+  /* background: rgba(255, 255, 255, 0.05); */
+  background: #112240;
+  /* border-left: 4px solid #64ffda; */
   padding: 20px 30px;
   margin-bottom: 30px;
   border-radius: 8px;

@@ -336,7 +336,7 @@ footer {
   border: 2px solid #52e0c4;
   border-radius: 30px;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
   text-decoration: none;
   box-shadow: 0 0 0px rgba(82, 224, 196, 0.7);
 }
@@ -346,24 +346,15 @@ footer {
   color: #0a192f;
   box-shadow: 0 0 15px rgba(82, 224, 196, 0.8);
   transform: scale(1.05);
+  animation: pulseBtn 1.2s infinite;
 }
 
-/* .btn-primary {
-  display: inline-block;
-  padding: 12px 28px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #52e0c4;
-  border: 2px solid #52e0c4;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  text-decoration: none;
+/* pulse keyframes */
+@keyframes pulseBtn {
+  0% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1.05); }
 }
-
-.btn-primary:hover {
-  background-color: #52e0c4;
-  color: #0a192f;
-} */
 
 /* Projects Section Styling */
 .projects-section {

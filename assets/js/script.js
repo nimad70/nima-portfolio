@@ -31,32 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-  const navLinks = document.getElementById('nav-links');
-  const menuToggle = document.getElementById('menu-toggle');
-
-  // Check if the click is outside the menu and toggle button
-  if (navLinks.classList.contains('active') &&
-      !navLinks.contains(event.target) &&
-      !menuToggle.contains(event.target)) {
-    navLinks.classList.remove('active');
-  }
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
+  document.addEventListener('click', function(event) {
     const navLinks = document.getElementById('nav-links');
-    if (navLinks.classList.contains('active')) {
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Check if the click is outside the menu and toggle button
+    if (navLinks.classList.contains('active') &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)) {
       navLinks.classList.remove('active');
     }
   });
-});
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
 
   // Scroll to Top Button logic
   const scrollBtn = document.getElementById("scrollToTopBtn");
   if (scrollBtn) {
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 100) {
         scrollBtn.style.display = "flex";
       } else {
         scrollBtn.style.display = "none";

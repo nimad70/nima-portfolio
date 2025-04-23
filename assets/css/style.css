@@ -581,8 +581,8 @@ body {
   padding: 20px 30px;
   text-align: left;
   transition: all 0.4s ease;
-  cursor: pointer;
   position: relative;
+  /* cursor: pointer; */
 }
 
 .project-card:hover {

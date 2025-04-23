@@ -444,11 +444,12 @@ body {
   border-radius: 10px;
   margin-bottom: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .experience-card:hover {
   transform: translateY(-6px);
+  background: rgba(82, 224, 196, 0.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -519,8 +520,8 @@ body {
 /* timeline Items */
 .timeline-item {
   /* background: rgba(255, 255, 255, 0.05); */
-  background: #112240;
   /* border-left: 4px solid #64ffda; */
+  background: #112240;
   padding: 20px 30px;
   margin-bottom: 30px;
   border-radius: 8px;

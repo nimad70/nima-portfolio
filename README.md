@@ -55,6 +55,7 @@ Currently seeking roles as an AI Engineer, Machine Learning Engineer, or Softwar
 │       ├── loader.js          # Loader Spinner Handler
 │       └── script.js          # Navbar scroll, Scroll to Top, Modal control
 ├── CNAME                      # Custom Domain Link
+├── robots.txt                 # Allow Everything To Crawl
 ├── sitemap.xml                # SEO Sitemap
 └── README.md                  # You are here :)
 ```

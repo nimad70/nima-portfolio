@@ -8,46 +8,83 @@ window.addEventListener('load', function() {
 
 // Sticky Navbar Shadow on Scroll
 window.addEventListener('scroll', function() {
-  const navbar = document.getElementById('navbar') || document.querySelector('nav');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   }
 });
 
-// Scroll to Top Button
-const scrollBtn = document.getElementById("scrollToTopBtn");
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 300) {
-    scrollBtn.style.display = "flex";
-  } else {
-    scrollBtn.style.display = "none";
+// DOMContentLoaded for menu toggle and scroll-to-top
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+  const navLinks = document.getElementById('nav-links');
+  const menuToggle = document.getElementById('menu-toggle');
+
+  // Check if the click is outside the menu and toggle button
+  if (navLinks.classList.contains('active') &&
+      !navLinks.contains(event.target) &&
+      !menuToggle.contains(event.target)) {
+    navLinks.classList.remove('active');
   }
 });
-scrollBtn.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
 });
 
-// AJAX Contact Form Submission
-window.addEventListener('DOMContentLoaded', function() {
+  // Scroll to Top Button logic
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = "flex";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Reset Contact Form if exists
   const form = document.getElementById("contactForm");
   if (form) form.reset();
 });
 
+// Selector Card functionality (if needed elsewhere)
 function showDetails(sectionId) {
   const cards = document.querySelectorAll('.selector-card');
   const sections = document.querySelectorAll('.details-card');
 
-  cards.forEach(card => {
-    card.classList.remove('active');
-  });
-  sections.forEach(section => {
-    section.classList.add('hidden');
-  });
+  cards.forEach(card => card.classList.remove('active'));
+  sections.forEach(section => section.classList.add('hidden'));
 
-  document.getElementById(sectionId).classList.remove('hidden');
-  document.querySelector(`[onclick="showDetails('${sectionId}')"]`).classList.add('active');
+  const activeSection = document.getElementById(sectionId);
+  if (activeSection) activeSection.classList.remove('hidden');
+
+  const activeCard = document.querySelector(`[onclick="showDetails('${sectionId}')"]`);
+  if (activeCard) activeCard.classList.add('active');
 }
 
 // // Thank You Modal Logic (for Contact page only)

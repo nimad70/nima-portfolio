@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reset Contact Form if exists
   const form = document.getElementById("contactForm");
-  if (form) form.reset();
+  if (form) {
+    form.reset();
+  }
 });
 
 // Selector Card functionality (if needed elsewhere)

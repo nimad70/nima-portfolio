@@ -331,6 +331,12 @@ body {
   50% { border-color: transparent; }
 }
 
+@media (max-width: 768px) {
+  .typewriter-line {
+    font-size: 0.9rem;
+  }
+}
+
 /* ========================
         About Section
 ========================= */

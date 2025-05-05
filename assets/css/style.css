@@ -305,7 +305,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   /* border-right: 2px solid #ffaa5e; */
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   /* width: 0;
   animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite; */
 }
@@ -331,7 +331,7 @@ body {
   50% { border-color: transparent; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .typewriter-line {
     font-size: 0.9rem;
   }

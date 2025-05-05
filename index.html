@@ -84,33 +84,5 @@
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const lines = document.querySelectorAll(".typewriter-line");
-    let delay = 0;
-
-    lines.forEach((line, i) => {
-      const text = line.textContent;
-      line.textContent = "";
-
-      setTimeout(() => {
-        let j = 0;
-        const typeInterval = setInterval(() => {
-          line.textContent = text.substring(0, j + 1);
-          j++;
-          if (j === text.length) {
-            clearInterval(typeInterval);
-            if (i === lines.length - 1) {
-              line.style.borderRight = "2px solid transparent"; // stop blinking on last line
-            }
-          }
-        }, 50); // typing speed per char
-      }, delay);
-
-      delay += text.length * 50 + 800; // wait for this line before next
-    });
-  });
-</script>
-
 </body>
 </html>

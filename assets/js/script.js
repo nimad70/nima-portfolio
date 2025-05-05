@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Close menu when a link is clicked
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       const navLinks = document.getElementById('nav-links');
@@ -72,6 +73,31 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.reset();
   }
+
+  // Typewriter Effect
+  const lines = document.querySelectorAll('.typewriter-line');
+  let delay = 0;
+
+  lines.forEach((line, i) => {
+    const text = line.textContent;
+    line.textContent = '';
+
+    setTimeout(() => {
+      let j = 0;
+      const typeInterval = setInterval(() => {
+        line.textContent = text.substring(0, j + 1);
+        j++;
+        if (j === text.length) {
+          clearInterval(typeInterval);
+          if (i === lines.length - 1) {
+            line.style.borderRight = '2px solid transparent';
+          }
+        }
+      }, 50);
+    }, delay);
+
+    delay += text.length * 50 + 800;
+  });
 });
 
 // Selector Card functionality (if needed elsewhere)

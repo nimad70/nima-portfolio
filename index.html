@@ -65,25 +65,15 @@
 
 <!-- Hero Section -->
 <section class="hero-section">
-
-  <!-- Animated SVG Background -->
-  <svg class="background-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-    <circle cx="400" cy="300" r="180" fill="none" stroke="#52e0c4" stroke-width="1">
-      <animate attributeName="r" from="180" to="200" dur="8s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="400" cy="300" r="120" fill="none" stroke="#ffffff33" stroke-width="1">
-      <animate attributeName="r" from="120" to="140" dur="6s" repeatCount="indefinite" />
-    </circle>
-  </svg>
-
+  <img class="background-svg" src="assets/images/brain-network.png" alt="Neural Network Background" />
   <div class="hero-content">
-    <!-- <img src="assets/images/profile-placeholder.png" alt="Nima Daryabar" class="profile-img"> -->
-    <h1>I'm Nima</h1>
-    <p class="subtitle">I Transform ideas into AI-driven realities</p>
-    <p class="subtitle">Ready to innovate the future?</p>
-    <a href="pages/projects.html" class="btn-primary">Explore My Work</a>
+    <span class="typewriter-line">&gt; whoami</span>
+    <span class="typewriter-line">Nima Daryabar — AI Engineer</span>
+    <span class="typewriter-line">&gt; mission</span>
+    <span class="typewriter-line">I Transform ideas into AI-driven realities</span>
+    <span class="typewriter-line" style="border-right: none;">Ready to innovate the future?</span>
+    <a href="pages/projects.html" class="btn-primary" style="margin-top: 1.5rem;">Explore My Work</a>
   </div>
-
 </section>
 
 <!-- Footer -->
@@ -93,6 +83,34 @@
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lines = document.querySelectorAll(".typewriter-line");
+    let delay = 0;
+
+    lines.forEach((line, i) => {
+      const text = line.textContent;
+      line.textContent = "";
+
+      setTimeout(() => {
+        let j = 0;
+        const typeInterval = setInterval(() => {
+          line.textContent = text.substring(0, j + 1);
+          j++;
+          if (j === text.length) {
+            clearInterval(typeInterval);
+            if (i === lines.length - 1) {
+              line.style.borderRight = "2px solid transparent"; // stop blinking on last line
+            }
+          }
+        }, 50); // typing speed per char
+      }, delay);
+
+      delay += text.length * 50 + 800; // wait for this line before next
+    });
+  });
+</script>
 
 </body>
 </html>

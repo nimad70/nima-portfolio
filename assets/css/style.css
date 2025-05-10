@@ -629,7 +629,7 @@ body {
   background: #112240;
   border: 1px solid #64ffda;
   border-radius: 12px;
-  padding: 20px 30px;
+  padding: 25px 30px;
   text-align: left;
   transition: all 0.4s ease;
   position: relative;
@@ -643,12 +643,7 @@ body {
 }
 
 .project-card a {
-  text-decoration: none; /* Remove underline from social icon links */
-}
-
-
-project-card-links {
-    text-decoration: none; /* Remove underline from social icon links */
+  text-decoration: none; /* Remove underline from project cards links */
 }
 
 .project-header {

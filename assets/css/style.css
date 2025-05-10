@@ -766,7 +766,7 @@ body {
 }
 
 form input, form textarea {
-  width: 100%;
+  width: 90%;
   padding: 15px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);

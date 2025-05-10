@@ -642,6 +642,11 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+.project-card a {
+  text-decoration: none; /* Remove underline from social icon links */
+}
+
+
 project-card-links {
     text-decoration: none; /* Remove underline from social icon links */
 }

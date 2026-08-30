@@ -47,9 +47,11 @@ Spaceship dashboard -> `nimadaryabar.com` -> **Advanced DNS** -> under
 `CUSTOM RECORDS` / `Default record group`, use the **"Start by choosing a record"**
 row and click **A**.
 
-> Before adding them by hand, check **Manage DNS presets** (top right). If a
-> GitHub Pages preset exists it will add the four A records in one step. Verify
-> afterwards that the values match the table below.
+> **Manage DNS presets** is not a shortcut here. The DNS Preset Manager only
+> offers "Create custom records preset" and "Create custom nameservers preset" —
+> presets are templates you build yourself to reuse across your own domains, not
+> a library of vendor configurations. There is no GitHub Pages preset. Building
+> one is more work than entering these five records once.
 
 **Add** these (Host `@` may be shown as blank or as the domain itself):
 

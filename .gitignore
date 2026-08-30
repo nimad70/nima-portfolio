@@ -1,0 +1,17 @@
+# Screenshots dropped into the repo root while working
+Screenshot*.png
+Screenshot*.jpg
+
+# Editor / tooling
+.qodo/
+.DS_Store
+*.swp
+
+# Node (Phase 1 onward)
+node_modules/
+.next/
+out/
+.wrangler/
+.env
+.env.local
+*.log

@@ -1,8 +1,6 @@
 User-agent: *
-Disallow: /assets/images/
-Disallow: /assets/files/
-Disallow: /assets/js/
-
 Allow: /
+
+Disallow: /assets/files/
 
 Sitemap: https://nimadaryabar.com/sitemap.xml

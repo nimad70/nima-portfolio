@@ -1,13 +1,23 @@
 /* ========================
+    Box Sizing Reset
+========================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ========================
     Base and General Styles
 ========================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0a192f, #112240);
   color: #ccd6f6;
-  scroll-behavior: smooth;
 }
 
 /* Scroll to Top Button */
@@ -61,6 +71,15 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  animation: loaderFailsafe 0s linear 8s forwards;
+}
+
+/* If load never fires (hung third-party request), lift the overlay anyway. */
+@keyframes loaderFailsafe {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 .spinner {
@@ -298,6 +317,12 @@ body {
   max-width: 900px;
   margin: 0 auto;
   white-space: pre-wrap;
+}
+
+h1.typewriter-line {
+  font-size: 1.3rem;
+  font-weight: inherit;
+  margin: 0;
 }
 
 .typewriter-line {
@@ -611,7 +636,7 @@ body {
   text-align: center;
 }
 
-.projects-section h2 {
+.projects-section h1 {
   font-size: 2.8rem;
   margin-bottom: 40px;
   color: #ccd6f6;
@@ -678,12 +703,6 @@ body {
 .project-description {
   margin-top: 12px;
   padding-left: 20px;
-  display: none;
-  animation: fadeSlideIn 0.6s ease forwards;
-}
-
-.project-card:hover .project-description {
-  display: block;
 }
 
 .project-description ul {
@@ -733,6 +752,12 @@ body {
   align-items: center;
   padding: 80px 20px;
   text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #ccd6f6;
 }
 
 .contact-subtitle {

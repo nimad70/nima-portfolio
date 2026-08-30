@@ -67,6 +67,16 @@ row and click **A**.
 | AAAA  | @    | 2606:50c0:8003::153  | 300 |
 | CNAME | www  | `nimad70.github.io.` | 300 |
 
+> **Expect a scary dialog.** From the second A record onward Spaceship shows
+> *"Add conflicting A record? ... may create unpredictable and unstable
+> behaviors"*. **Click "Add new record" and continue.** It is a false alarm here.
+> Several A records on one host is a round-robin record set, not a conflict — all
+> four addresses are GitHub edge nodes serving identical content, and resolvers
+> picking among them is exactly the redundancy you want. Spaceship warns because
+> the *usual* cause of duplicate apex A records is someone pointing a domain at
+> two different hosts by mistake. Tick "Don't warn me again ... during this
+> session" to silence the remaining two.
+
 All four A records are required — GitHub load-balances across them. The AAAA
 records are optional but give IPv6 visitors a direct path. Note the trailing dot
 on the CNAME value.

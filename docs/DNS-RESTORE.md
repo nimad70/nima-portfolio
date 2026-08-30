@@ -4,14 +4,25 @@
 
 ## Diagnosis
 
-Nameservers moved to Spaceship correctly, but the zone was created with Spaceship's
-default **parking** A records instead of GitHub Pages' IPs.
+Nameservers moved to Spaceship correctly, but **the zone is empty** — Advanced DNS
+shows `DNS Records (0)`. When a Spaceship zone has no records, Spaceship answers
+the apex itself with its parking IPs.
 
 ```
 nimadaryabar.com  A → 54.149.79.189, 34.216.117.25
                       = ec2-*.us-west-2.compute.amazonaws.com (Spaceship parking)
                       = serves <title>Parking Page</title> on :80, nothing on :443
 www.nimadaryabar.com  → does not resolve at all (no A, no CNAME)
+```
+
+These two A records are **injected, not stored**. They do not appear in the
+Advanced DNS panel and there is no parking toggle to switch off — which is exactly
+why they are hard to find. Verified apex-only, not a wildcard: a nonexistent
+subdomain returns NXDOMAIN.
+
+```sh
+dig @launch1.spaceship.net nimadaryabar.com A +short   # 54.149.79.189, 34.216.117.25
+dig +short doesnotexist.nimadaryabar.com A             # empty -> not a wildcard
 ```
 
 The GitHub side is **untouched and fine** — `nimad70.github.io/nima-portfolio/`
@@ -26,16 +37,19 @@ which times out. Returning visitors and Google get a hard failure, not the parki
 
 ## Fix
 
-### Step 1 — Turn off parking at Spaceship
+### Step 1 — Add the records. There is nothing to delete and nothing to switch off.
 
-In the Spaceship dashboard, open the domain and **disable Parking / "Website
-placeholder"** before touching DNS. If left on, it can re-add the parking records.
+The zone is empty, so there are no parking records to remove and no parking
+setting to disable. **Adding your own apex A records is what stops the parking
+answer** — Spaceship only injects it while the zone has nothing of its own.
 
-### Step 2 — Replace the DNS records
+Spaceship dashboard -> `nimadaryabar.com` -> **Advanced DNS** -> under
+`CUSTOM RECORDS` / `Default record group`, use the **"Start by choosing a record"**
+row and click **A**.
 
-Spaceship dashboard -> `nimadaryabar.com` -> **Advanced DNS**.
-
-**Delete** both parking A records: `54.149.79.189` and `34.216.117.25`.
+> Before adding them by hand, check **Manage DNS presets** (top right). If a
+> GitHub Pages preset exists it will add the four A records in one step. Verify
+> afterwards that the values match the table below.
 
 **Add** these (Host `@` may be shown as blank or as the domain itself):
 
@@ -57,7 +71,7 @@ on the CNAME value.
 
 Use a low TTL (300) for now; raise it to 3600 once everything is confirmed working.
 
-### Step 3 — Verify propagation
+### Step 2 — Verify propagation
 
 ```sh
 dig +short nimadaryabar.com A          # expect the four 185.199.10x.153
@@ -65,9 +79,18 @@ dig +short www.nimadaryabar.com CNAME  # expect nimad70.github.io.
 curl -sSI http://nimadaryabar.com | head -3   # expect Server: GitHub.com
 ```
 
+The parking IPs disappear on their own the moment real A records exist — the
+injected answer stops as soon as the zone is non-empty. If `54.149.79.189` is
+still coming back after the records are saved, it is cached: wait for the old TTL
+to expire, or query the authoritative server directly to see the truth:
+
+```sh
+dig @launch1.spaceship.net nimadaryabar.com A +short
+```
+
 Wait until `dig` shows the GitHub IPs before moving on. Usually minutes.
 
-### Step 4 — Re-issue the TLS certificate
+### Step 3 — Re-issue the TLS certificate
 
 GitHub only requests a Let's Encrypt cert after its own DNS check passes.
 
@@ -81,7 +104,7 @@ GitHub only requests a Let's Encrypt cert after its own DNS check passes.
 
 Do not remove the `CNAME` file from the repo; Pages reads the custom domain from it.
 
-### Step 5 — Final verification
+### Step 4 — Final verification
 
 ```sh
 curl -sSI https://nimadaryabar.com | head -3        # expect 200, Server: GitHub.com
@@ -90,13 +113,16 @@ curl -sSI https://www.nimadaryabar.com | head -5    # expect 301 -> https://nima
 
 ## Rollback
 
-Restoring `54.149.79.189` / `34.216.117.25` returns the parking page. There is no
-reason to do this — nothing of value is on those IPs.
+Deleting the records you added returns the zone to empty, which brings the parking
+page back. There is no reason to do this — nothing of value is on those IPs.
 
-## Note for the Cloudflare migration (Phase 3)
+## Note for the Cloudflare migration (Phase 6)
 
 Cloudflare Pages can only attach an **apex** custom domain when the zone is on
 Cloudflare's own nameservers. That migration means repointing NS at Spaceship from
 `launch1/launch2.spaceship.net` to the pair Cloudflare assigns. Spaceship stays the
 registrar. Do that only once the new site is built and verified on a `*.pages.dev`
 URL, so the live site is never dark again.
+
+Cloudflare's own nameservers behave the same way on an empty zone, so import the
+records before switching NS, not after.

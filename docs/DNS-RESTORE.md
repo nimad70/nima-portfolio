@@ -71,7 +71,11 @@ All four A records are required — GitHub load-balances across them. The AAAA
 records are optional but give IPv6 visitors a direct path. Note the trailing dot
 on the CNAME value.
 
-Use a low TTL (300) for now; raise it to 3600 once everything is confirmed working.
+**TTL:** Spaceship's dropdown offers fixed choices rather than a free-text value,
+so 300 may not be selectable — pick the shortest on offer. Its default of 30 min is
+acceptable and does not delay this fix: the switch away from parking is governed by
+the *old* record's TTL (already 300s), not the new one. A short TTL matters only so
+that a typo is cheap to correct. Raise it to 1 hour once everything is verified.
 
 ### Step 2 — Verify propagation
 

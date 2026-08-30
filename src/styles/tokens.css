@@ -1,0 +1,140 @@
+/* ============================================================
+   Design tokens — the single source of truth.
+
+   No component may hardcode a colour. The previous site had
+   hundreds of loose hex values and two interchangeable accents
+   (#64ffda / #52e0c4) used at random; that is what this prevents.
+
+   Light is the base definition. Dark is applied both by system
+   preference and by an explicit [data-theme] override, so the
+   toggle wins in either direction.
+   ============================================================ */
+
+:root {
+  /* ---- Light: warm paper, not clinical white.
+         A terminal on a bright monitor, not an inverted dark theme. ---- */
+  --bg: #f4f1ea;
+  --surface: #fffdf8;
+  --surface-raised: #ebe6db;
+  --border: #d8d1c2;
+  --border-strong: #b9b09c;
+
+  --text: #1a2028;
+  --text-muted: #57616f;
+  --text-faint: #7d8794;
+
+  /* The dark theme's cyan is illegible on light, so light gets its
+     own accent rather than a reused one. Both pass AA on their ground. */
+  --accent: #0b6e64;
+  --accent-hover: #095951;
+  --accent-contrast: #ffffff;
+
+  --focus: #0b6e64;
+  --selection: #cfe9e4;
+
+  --shadow: 0 1px 2px rgb(26 32 40 / 8%), 0 4px 12px rgb(26 32 40 / 6%);
+
+  /* ---- Type ---- */
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Body floor is 1rem. Density comes from tight leading and small
+     margins, never from shrinking text below legibility. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  --tracking-wide: 0.02em;
+  --tracking-caps: 0.08em;
+
+  /* ---- Space ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* ---- Shape ---- */
+  --radius: 3px;
+  --radius-lg: 6px;
+  --border-width: 1px;
+
+  /* ---- Layout: a centred column, the 2004 way, but responsive ---- */
+  --measure: 68ch;
+  --width-content: 1100px;
+  --width-rail: 200px;
+
+  /* ---- Motion. Every duration resolves to 0 under reduced motion. ---- */
+  --motion-fast: 120ms;
+  --motion: 200ms;
+  --motion-slow: 400ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark by system preference, unless explicitly overridden to light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a192f;
+    --surface: #112240;
+    --surface-raised: #1b3155;
+    --border: #233554;
+    --border-strong: #3a5580;
+
+    --text: #ccd6f6;
+    --text-muted: #8892b0;
+    --text-faint: #6b7a99;
+
+    --accent: #64ffda;
+    --accent-hover: #9dffe9;
+    --accent-contrast: #0a192f;
+
+    --focus: #64ffda;
+    --selection: #1f4b52;
+
+    --shadow: 0 1px 2px rgb(2 8 20 / 40%), 0 4px 14px rgb(2 8 20 / 35%);
+  }
+}
+
+/* Explicit dark choice wins regardless of system preference. */
+:root[data-theme="dark"] {
+  --bg: #0a192f;
+  --surface: #112240;
+  --surface-raised: #1b3155;
+  --border: #233554;
+  --border-strong: #3a5580;
+
+  --text: #ccd6f6;
+  --text-muted: #8892b0;
+  --text-faint: #6b7a99;
+
+  --accent: #64ffda;
+  --accent-hover: #9dffe9;
+  --accent-contrast: #0a192f;
+
+  --focus: #64ffda;
+  --selection: #1f4b52;
+
+  --shadow: 0 1px 2px rgb(2 8 20 / 40%), 0 4px 14px rgb(2 8 20 / 35%);
+}
+
+/* Invariant 6: prefers-reduced-motion is honoured everywhere.
+   Collapsing the duration tokens disables transitions globally rather
+   than relying on each component to remember. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion: 0ms;
+    --motion-slow: 0ms;
+  }
+}

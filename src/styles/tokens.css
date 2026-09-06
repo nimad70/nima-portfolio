@@ -21,7 +21,9 @@
 
   --text: #1a2028;
   --text-muted: #57616f;
-  --text-faint: #7d8794;
+  /* 4.60:1 on --surface. The lighter #7d8794 it replaced was 3.58:1 and
+     failed AA for the small metadata text this token is used for. */
+  --text-faint: #6b7582;
 
   /* The dark theme's cyan is illegible on light, so light gets its
      own accent rather than a reused one. Both pass AA on their ground. */

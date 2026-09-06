@@ -64,7 +64,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${mono.variable} ${sans.variable}`}>
+    // suppressHydrationWarning is required, not a workaround: the inline script
+    // below sets data-theme before React hydrates, so the DOM deliberately
+    // differs from the server payload. This tells React the DOM wins for this
+    // element's attributes. Without it React discards the correction and the
+    // page flashes the wrong theme.
+    // node_modules/next/dist/docs/01-app/02-guides/preventing-flash-before-hydration.md
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${mono.variable} ${sans.variable}`}
+    >
       <head>
         {/* Applies a stored theme before first paint, so a dark-theme reload
             never flashes light. Must stay inline and synchronous. */}

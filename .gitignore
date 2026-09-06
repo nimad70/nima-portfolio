@@ -1,7 +1,3 @@
-# Screenshots dropped into the repo root while working
-Screenshot*.png
-Screenshot*.jpg
-
 # Editor / tooling
 .qodo/
 .DS_Store

@@ -5,14 +5,40 @@
    hundreds of loose hex values and two interchangeable accents
    (#64ffda / #52e0c4) used at random; that is what this prevents.
 
-   Light is the base definition. Dark is applied both by system
-   preference and by an explicit [data-theme] override, so the
-   toggle wins in either direction.
+   Palette: period-accurate Web 1.0.
+   The accent #6699cc is an actual value from the 216-colour
+   web-safe cube (channels 00/33/66/99/CC/FF) that defined 1990s
+   web design. The dark greys are MuggleNet's own 2004 palette
+   (#272727 ground, #cfcfcf text), read off the archived page
+   that started this design direction. Blue-on-grey was the
+   unstyled web: default link #0000EE, Netscape page grey
+   #C0C0C0. The light accent #336699 is web-safe too, so the
+   pair stays historically consistent across both themes.
+
+   Every foreground value is verified at WCAG AA (>=4.5:1)
+   against its own background.
    ============================================================ */
 
 :root {
+  /* ---- Dark values, defined once ----
+     Both the system-preference block and the explicit override below
+     remap to these, so the two can never drift apart. */
+  --d-bg: #1a1a1a;
+  --d-surface: #242424;
+  --d-surface-raised: #303030;
+  --d-border: #3d3d3d;
+  --d-border-strong: #565656;
+  --d-text: #cfcfcf; /* 11.17:1 on --d-bg */
+  --d-text-muted: #9a9a9a; /* 6.19:1 */
+  --d-text-faint: #8c8c8c; /* 5.18:1 */
+  --d-accent: #6699cc; /* 5.80:1 — web-safe */
+  --d-accent-hover: #99ccff; /* web-safe */
+  --d-accent-contrast: #1a1a1a;
+  --d-selection: #2b4157;
+  --d-shadow: 0 1px 2px rgb(0 0 0 / 45%), 0 4px 14px rgb(0 0 0 / 40%);
+
   /* ---- Light: warm paper, not clinical white.
-         A terminal on a bright monitor, not an inverted dark theme. ---- */
+         A page under a desk lamp, not an inverted dark theme. ---- */
   --bg: #f4f1ea;
   --surface: #fffdf8;
   --surface-raised: #ebe6db;
@@ -20,17 +46,15 @@
   --border-strong: #b9b09c;
 
   --text: #1a2028;
-  --text-muted: #57616f;
-  --text-faint: #7d8794;
+  --text-muted: #57616f; /* 6.18:1 on --surface */
+  --text-faint: #6b7582; /* 4.60:1 — the lighter #7d8794 it replaced failed AA */
 
-  /* The dark theme's cyan is illegible on light, so light gets its
-     own accent rather than a reused one. Both pass AA on their ground. */
-  --accent: #0b6e64;
-  --accent-hover: #095951;
+  --accent: #336699; /* 5.90:1 on --surface — web-safe */
+  --accent-hover: #003366; /* web-safe */
   --accent-contrast: #ffffff;
 
-  --focus: #0b6e64;
-  --selection: #cfe9e4;
+  --focus: #336699;
+  --selection: #cfe0f0;
 
   --shadow: 0 1px 2px rgb(26 32 40 / 8%), 0 4px 12px rgb(26 32 40 / 6%);
 
@@ -85,47 +109,39 @@
 /* Dark by system preference, unless explicitly overridden to light. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0a192f;
-    --surface: #112240;
-    --surface-raised: #1b3155;
-    --border: #233554;
-    --border-strong: #3a5580;
-
-    --text: #ccd6f6;
-    --text-muted: #8892b0;
-    --text-faint: #6b7a99;
-
-    --accent: #64ffda;
-    --accent-hover: #9dffe9;
-    --accent-contrast: #0a192f;
-
-    --focus: #64ffda;
-    --selection: #1f4b52;
-
-    --shadow: 0 1px 2px rgb(2 8 20 / 40%), 0 4px 14px rgb(2 8 20 / 35%);
+    --bg: var(--d-bg);
+    --surface: var(--d-surface);
+    --surface-raised: var(--d-surface-raised);
+    --border: var(--d-border);
+    --border-strong: var(--d-border-strong);
+    --text: var(--d-text);
+    --text-muted: var(--d-text-muted);
+    --text-faint: var(--d-text-faint);
+    --accent: var(--d-accent);
+    --accent-hover: var(--d-accent-hover);
+    --accent-contrast: var(--d-accent-contrast);
+    --focus: var(--d-accent);
+    --selection: var(--d-selection);
+    --shadow: var(--d-shadow);
   }
 }
 
 /* Explicit dark choice wins regardless of system preference. */
 :root[data-theme="dark"] {
-  --bg: #0a192f;
-  --surface: #112240;
-  --surface-raised: #1b3155;
-  --border: #233554;
-  --border-strong: #3a5580;
-
-  --text: #ccd6f6;
-  --text-muted: #8892b0;
-  --text-faint: #6b7a99;
-
-  --accent: #64ffda;
-  --accent-hover: #9dffe9;
-  --accent-contrast: #0a192f;
-
-  --focus: #64ffda;
-  --selection: #1f4b52;
-
-  --shadow: 0 1px 2px rgb(2 8 20 / 40%), 0 4px 14px rgb(2 8 20 / 35%);
+  --bg: var(--d-bg);
+  --surface: var(--d-surface);
+  --surface-raised: var(--d-surface-raised);
+  --border: var(--d-border);
+  --border-strong: var(--d-border-strong);
+  --text: var(--d-text);
+  --text-muted: var(--d-text-muted);
+  --text-faint: var(--d-text-faint);
+  --accent: var(--d-accent);
+  --accent-hover: var(--d-accent-hover);
+  --accent-contrast: var(--d-accent-contrast);
+  --focus: var(--d-accent);
+  --selection: var(--d-selection);
+  --shadow: var(--d-shadow);
 }
 
 /* Invariant 6: prefers-reduced-motion is honoured everywhere.

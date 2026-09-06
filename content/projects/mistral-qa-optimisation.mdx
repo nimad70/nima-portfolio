@@ -1,0 +1,59 @@
+export const metadata = {
+  slug: "mistral-qa-optimisation",
+  title: "Optimising medical question answering",
+  summary:
+    "Fine-tuning and retrieval-augmenting Mistral 7B for clinical QA, taking answer accuracy from 84% to over 95%.",
+  year: 2024,
+  status: "shipped",
+  featured: false,
+  tech: [
+    "Python",
+    "Mistral 7B",
+    "LoRA",
+    "QLoRA",
+    "RAFT",
+    "LangChain",
+    "Hugging Face",
+  ],
+  repo: "https://github.com/nimad70/mistral-qa-optimization",
+  results: [
+    "Answer accuracy improved from 84% to over 95% on held-out medical QA",
+    "Domain context supplied at inference through a retrieval pipeline",
+  ],
+};
+
+## The problem
+
+General-purpose models answer medical questions confidently and are wrong often
+enough to matter. The gap is not reasoning so much as domain grounding: the
+model has seen medical text, but not enough of it, and cannot tell which of its
+recollections are reliable.
+
+## Approach
+
+Two interventions, measured separately so their contributions could be told
+apart:
+
+- **Fine-tuning** — Mistral 7B v0.2 adapted on curated medical QA datasets
+  (MedQuAD, MedicalQA) using LoRA and QLoRA, keeping training tractable on
+  limited hardware.
+- **Retrieval** — a RAG pipeline supplying domain passages at inference, using
+  RAFT so the model is trained to work with retrieved context rather than
+  merely having it appended.
+
+RAFT matters here. A model fine-tuned without retrieved context, then given
+retrieved context at inference, tends to ignore it. Training with the retrieval
+distribution it will actually see teaches it to use the documents.
+
+## Results
+
+Accuracy on held-out questions rose from **84% to over 95%**.
+
+## Caveat
+
+That number is accuracy on a benchmark, not clinical safety. Benchmark QA
+rewards matching a reference answer; it says nothing about behaviour on
+questions outside the distribution, or about whether the model declines when it
+should. I would not put this in front of a patient, and the interesting
+follow-up work is measuring calibration and refusal rather than pushing
+accuracy higher.

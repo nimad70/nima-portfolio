@@ -1,3 +1,4 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -16,6 +17,13 @@ const nextConfig: NextConfig = {
   // Fail the build on type errors rather than shipping them.
   // (Next 16 removed the `eslint` key; linting runs as its own CI step.)
   typescript: { ignoreBuildErrors: false },
+
+  // NOTE: pageExtensions deliberately does NOT include md/mdx. Content is data
+  // living in content/, imported by route components — never a route itself
+  // (docs/ARCHITECTURE.md ADR-002). Adding mdx here would let a stray content
+  // file become a page.
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

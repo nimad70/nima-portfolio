@@ -1,0 +1,62 @@
+export const metadata = {
+  slug: "surge-pricing-predictor",
+  title: "Surge pricing predictor",
+  summary:
+    "Predicting hourly price surges from market movement, reaching 76% precision with gradient-boosted trees.",
+  year: 2022,
+  status: "shipped",
+  featured: false,
+  tech: [
+    "Python",
+    "XGBoost",
+    "Random Forest",
+    "SVM",
+    "Neural Networks",
+    "scikit-learn",
+    "PCA",
+  ],
+  results: [
+    "76% precision on surge prediction from hourly market data",
+    "PCA for dimensionality reduction ahead of model fitting",
+  ],
+};
+
+## The problem
+
+Predicting when hourly market prices will spike, from historical pricing
+patterns and movement trends.
+
+Precision matters more than recall for this. A missed surge costs an
+opportunity; a false alarm costs a decision made on bad information. The models
+were tuned accordingly.
+
+## Approach
+
+A comparison across model families rather than a commitment to one:
+XGBoost, random forests, SVMs and small neural networks, all on the same
+features and splits so the differences were attributable to the models.
+
+Principal component analysis handled dimensionality reduction and feature
+selection, which mattered because the raw feature set was wide relative to the
+number of usable hourly observations.
+
+## Results
+
+**76% precision** from the best-performing configuration.
+
+## Honest limitations
+
+This is a time series, and time series make it very easy to fool yourself. The
+things I would want to verify before trusting this number:
+
+- That the splits are strictly chronological, with no future information
+  reachable from the training window
+- That features are computed from data available at prediction time, not
+  aggregated across the whole series
+- That the baseline is a realistic one — "predict no surge" is a strong
+  baseline when surges are rare, and beating it is the only result worth
+  reporting
+
+Without those confirmed, 76% precision is a promising signal rather than a
+finding. I include it because the modelling comparison was sound; I would not
+put money behind the number.

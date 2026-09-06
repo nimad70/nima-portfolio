@@ -1,0 +1,63 @@
+export const metadata = {
+  slug: "emotion-aware-chatbot",
+  title: "Emotion-aware chatbot",
+  summary:
+    "Real-time face and emotion detection driving a conversation that adapts to how the user actually seems.",
+  year: 2025,
+  status: "in-progress",
+  featured: true,
+  tech: [
+    "Python",
+    "OpenCV",
+    "TensorFlow",
+    "EfficientNetB0",
+    "TensorFlow Lite",
+    "Streamlit",
+    "LangChain",
+    "Hugging Face",
+    "Docker",
+  ],
+  repo: "https://github.com/nimad70/Communicate",
+  results: [
+    "EfficientNetB0 converted to TFLite with float16 quantisation for mobile deployment",
+    "Live webcam inference with adjustable confidence thresholding",
+  ],
+};
+
+## The problem
+
+Text-only assistants read what you typed, not how you are. A user who is
+frustrated and one who is curious can send the same words and get the same
+reply, which is usually the wrong reply for at least one of them.
+
+## Approach
+
+Two systems joined at the interface:
+
+- **Vision** — ResNet SSD for face detection, EfficientNetB0 for emotion
+  classification, running per-frame on a webcam stream through OpenCV.
+- **Conversation** — a Hugging Face model orchestrated with LangChain, taking
+  the detected emotional signal as additional context alongside the message.
+
+The Streamlit interface exposes the parts that usually stay hidden: live
+bounding boxes, the classifier's confidence, and a threshold control. Being
+able to watch the classifier disagree with you is most of what makes the
+system debuggable.
+
+For deployment, EfficientNetB0 is converted to TensorFlow Lite with float16
+quantisation, cutting model size substantially at negligible accuracy cost.
+The whole application is containerised so it runs the same way anywhere.
+
+## Status
+
+In progress. Vision and interface work; the emotion signal is wired into the
+conversation but the prompting strategy around it is still being tuned.
+
+## The honest difficulty
+
+Facial expression is a weak proxy for emotional state. It varies by person,
+culture and context, and datasets in this space carry well-documented bias.
+Treating a classifier output as ground truth about someone's feelings would be
+both wrong and a bit rude. The design question I am still working on is how to
+use a low-confidence signal usefully — nudging tone rather than asserting that
+it knows how you feel.

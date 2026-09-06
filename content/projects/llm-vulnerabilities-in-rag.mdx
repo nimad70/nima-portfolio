@@ -1,0 +1,73 @@
+export const metadata = {
+  slug: "llm-vulnerabilities-in-rag",
+  title: "LLM vulnerabilities in RAG systems",
+  summary:
+    "Poisoning a vector database to degrade retrieval-augmented generation by up to 40%, and what defends against it.",
+  year: 2024,
+  status: "research",
+  featured: true,
+  tech: [
+    "Python",
+    "LLaMA-2",
+    "LoRA",
+    "QLoRA",
+    "ChromaDB",
+    "LangChain",
+    "InstructorEmbedding",
+    "Hugging Face",
+  ],
+  repo: "https://github.com/nimad70/VulRAG",
+  results: [
+    "Up to 40% degradation in answer quality from a poisoned vector store",
+    "LLaMA-2 fine-tuned under 4-bit quantisation on a single consumer GPU",
+  ],
+};
+
+## The problem
+
+Retrieval-augmented generation is usually framed as a fix for hallucination:
+ground the model in retrieved documents and it stops inventing things. That
+framing quietly assumes the retrieval corpus is trustworthy.
+
+It often is not. A vector database is frequently the least guarded component of
+the stack — populated by an ingestion pipeline, fed from sources that change,
+and rarely audited after the fact. If an attacker can influence what goes in,
+they influence what the model says, without touching the model at all.
+
+This was my M.Sc. thesis at the University of Padua, carried out during a
+research internship at ICIS, Radboud University.
+
+## Approach
+
+I built a full RAG pipeline so the attack could be measured against a working
+baseline rather than a toy:
+
+- Document ingestion and chunking over a corpus of PDFs
+- Embeddings via InstructorEmbedding, stored in ChromaDB
+- Semantic retrieval feeding a LLaMA-2 generator, orchestrated with LangChain
+
+Then I poisoned the store — injecting crafted passages designed to be retrieved
+for target queries and to carry misleading content once retrieved — and
+measured the change in answer quality against the clean baseline.
+
+Running LLaMA-2 on available hardware meant memory-efficient fine-tuning:
+LoRA and QLoRA adapters with 8-bit and 4-bit quantisation, which brought
+training within reach of a single consumer GPU.
+
+## Results
+
+Answer quality dropped by **up to 40%** on targeted queries. The failure mode
+matters more than the number: the system did not error or refuse. It answered
+fluently and confidently, citing retrieved context, and was wrong. Every
+surface signal a user relies on to judge trustworthiness stayed intact.
+
+That is the uncomfortable finding. Grounding makes a model *more* persuasive,
+so corrupting the grounding is more dangerous than corrupting the model.
+
+## What I would do differently
+
+The evaluation leaned on a narrow set of target queries. A broader sweep,
+including queries the poisoning was not tuned for, would say more about how
+far the degradation generalises. I would also now measure retrieval precision
+separately from answer quality, to separate "the wrong document was retrieved"
+from "the right document was retrieved and the model still went wrong".

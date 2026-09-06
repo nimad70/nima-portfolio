@@ -13,6 +13,7 @@ come away impressed". The repo is itself a code sample.
 
 - `docs/ARCHITECTURE.md` — ADRs and the dependency rule. Read before structural changes.
 - `docs/DESIGN.md` — the visual direction and its non-negotiables.
+- `docs/PALETTE.md` — every palette candidate, verified contrast, how to change it.
 - `docs/CONTRIBUTING.md` — branch flow, commit convention, CI gates.
 - `docs/DNS-RESTORE.md` — domain/hosting runbook.
 

@@ -82,12 +82,21 @@ The rule: **retro in structure and typography, modern in behaviour and access.**
   then asks for `bold` (700), so browsers synthesise a fake bold.
 
 ### Colour
+
+**See `docs/PALETTE.md`** for every candidate considered, full token values,
+verified contrast ratios, and how to change palettes.
+
 - Full token set as CSS custom properties. No hardcoded hex in components — the
-  present stylesheet has hundreds, plus two interchangeable accents
-  (`#64ffda`, `#52e0c4`) used at random.
-- **Dark and light both first-class.** Dark inherits from the current navy
-  (`#0a192f` / `#112240`) so the site stays recognisably his. Light is a warm
-  paper tone, not clinical white — closer to an old terminal on a bright monitor.
+  old stylesheet had hundreds, plus two interchangeable accents (`#64ffda`,
+  `#52e0c4`) used at random.
+- **Dark and light both first-class.** Light is warm paper, not clinical white.
+  Dark is period-accurate Web 1.0 greys.
+- The accent is `#6699cc` dark / `#336699` light — genuine values from the
+  216-colour web-safe cube that defined 1990s web design. The dark greys are
+  MuggleNet's own 2004 palette, read off the archived reference page.
+- The inherited navy/cyan was dropped: cool against a warm light theme, so the
+  two read as different sites, and the most over-used scheme in developer
+  portfolios.
 - `prefers-color-scheme` for the default, an explicit toggle to override,
   persisted in `localStorage`.
 - Every pairing verified against WCAG AA before it ships.

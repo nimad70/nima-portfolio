@@ -1,0 +1,54 @@
+export const metadata = {
+  slug: "diabetic-retinopathy-detection",
+  title: "Diabetic retinopathy detection",
+  summary:
+    "Grading retinal images into five severity classes with transfer learning, reaching 79% on the APTOS 2019 dataset.",
+  year: 2023,
+  status: "shipped",
+  featured: false,
+  tech: ["Python", "TensorFlow", "Keras", "Inception V3", "OpenCV"],
+  repo: "https://github.com/nimad70/diabetic-retinopathy-detection",
+  results: [
+    "79% accuracy across five severity grades on APTOS 2019",
+    "Preprocessing pipeline — CLAHE, Gaussian blur, Sobel and Canny edges",
+  ],
+};
+
+## The problem
+
+Diabetic retinopathy is a leading cause of preventable blindness, and it is
+diagnosed by looking at retinal photographs. Screening is a volume problem:
+enough images, not enough specialists to grade them, and the earliest stages
+are the subtlest to spot.
+
+## Approach
+
+Transfer learning from Inception V3, fine-tuned on the APTOS 2019 Blindness
+Detection dataset to classify images into five severity grades.
+
+Most of the work was not the model. Retinal photographs vary enormously in
+illumination, contrast and framing between cameras and clinics, and that
+variation swamps the signal. The preprocessing pipeline mattered more than
+architecture choice:
+
+- CLAHE for local contrast, so lesions survive uneven illumination
+- Gaussian blur to suppress sensor noise before edge extraction
+- Sobel and Canny edges to sharpen vessel and lesion boundaries
+
+## Results
+
+**79% accuracy** across five grades after fine-tuning and hyperparameter
+search.
+
+## The number in context
+
+Five-class accuracy flattens something important: the classes are ordered, and
+the errors are not equally costly. Confusing grade 0 with grade 1 is minor;
+confusing grade 0 with grade 4 is a missed emergency. Accuracy treats those
+identically.
+
+Quadratic weighted kappa — the metric the APTOS competition actually used —
+penalises distant confusions more heavily and is the right measure here. If I
+revisited this, that is the first thing I would change, along with reporting
+per-class recall so the behaviour on rare severe cases is visible rather than
+averaged away.
